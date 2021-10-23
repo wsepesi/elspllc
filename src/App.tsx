@@ -1,25 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
+import {
+	Route,
+	Switch
+} from 'react-router-dom';
+
+import About from './pages/About';
+import Contact from './pages/Contact';
+import Experience from './pages/Experience';
+import Home from './pages/Home';
+import PracticeFocus from './pages/PracticeFocus';
+import Publications from './pages/Publications';
+import React from 'react'
+
+const App = (): React.ReactElement => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Switch>
+      <Route path="/">
+        <Home />
+      </Route>
+      <Route path="/about">
+        <About />
+      </Route>
+      <Route path="/experience">
+        <Experience />
+      </Route>
+      <Route path="/practice-focus">
+        <PracticeFocus />
+      </Route>
+      <Route path="/publications">
+        <Publications />
+      </Route>
+      <Route path="/contact">
+        <Contact />
+      </Route>
+    </Switch>
   );
 }
 
