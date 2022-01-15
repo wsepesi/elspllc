@@ -1,5 +1,5 @@
 import AboutPanel from '../components/AboutPanel'
-import ContactPanel from '../components/ContactPanel'
+// import ContactPanel from '../components/ContactPanel'
 import CorePanel from '../components/CorePanel'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
