@@ -24,7 +24,7 @@ const theme = createTheme({
 			fontSize: getRemFromPx(64),
 			//fontFamily: ['Aleo', 'serif'].join(','),
 			lineHeight: getRemFromPx(78),
-			fontWeight: 500
+			fontWeight: 400
 		},
         h2: {
             fontSize: getRemFromPx(76),
@@ -48,9 +48,9 @@ const theme = createTheme({
 		},
 		body1: {
 			// writing
-			fontSize: getRemFromPx(20),
+			fontSize: getRemFromPx(18),
 			lineHeight: getRemFromPx(28),
-            fontWeight: 400
+            fontWeight: 300
 		},
 		body2: {
 			// header bar
@@ -67,7 +67,8 @@ const theme = createTheme({
             //logo at top
             fontSize: getRemFromPx(22),
             lineHeight: getRemFromPx(27),
-            style: "italic"
+            fontStyle: "italic",
+			fontWeight: 'normal'
         },
 		button: {
 			color: 'backgroundLight',
@@ -118,6 +119,27 @@ const theme = createTheme({
 		MuiButton: {
 			text: {},
 			root: {
+				display: 'inline-block',
+				position: 'relative',
+				'&:hover': {
+					backgroundColor: 'transparent' //TODO: do we like this
+				},
+				'&:after': {
+					content: '""',
+					position: 'absolute',
+					width: '90%',
+					transform: 'scaleX(0) translateX(-50%)',
+					height: 3,
+					bottom: 0,
+					left: '50%',
+					backgroundColor: SYSTEM_COLORS.SECONDARY,
+					transformOrigin: 'bottom left',
+					transition: 'transform 0.2s ease-out'
+				},
+				'&:hover:after': {
+					transform: 'scaleX(1) translateX(-50%)',
+					transformOrigin: 'bottom left'
+				},
 				borderRadius: 8
 			},
 			contained: {

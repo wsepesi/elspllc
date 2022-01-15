@@ -1,18 +1,18 @@
+import FullAbout from '../components/FullAbout'
+import GetToKnowUs from '../components/GetToKnowUs'
+import Page from './Page'
 import React from 'react'
-import { makeStyles } from "@material-ui/styles"
-
-const useStyles = makeStyles({
-    wrapper: {
-
-    }
-})
+import SimpleTemplate from '../components/SimpleTemplate'
 
 const About = (): React.ReactElement => {
-    const classes = useStyles()
     return(
-        <div className={classes.wrapper}>
-            
-        </div>
+        <Page>
+            <SimpleTemplate title="About">
+                <FullAbout />
+            </SimpleTemplate>
+            {/* <BlueTransition /> */}
+            <GetToKnowUs />
+        </Page>
     )
 }
 
