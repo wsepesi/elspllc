@@ -48,7 +48,7 @@ const NavLink = (props: Props): React.ReactElement => {
                 // disableFocusRipple={true}
                 // disableElevation={true}
                 // variant="text"
-                href={props.to}
+                href={`/${props.to}`}
                 className={!isHere ? classes.button : classes.here}
             >{props.text}</Button>
         </div>
