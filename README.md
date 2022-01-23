@@ -1,3 +1,7 @@
+# This is the repo for the website for Environmental Law and Science, PLLC. All rights reserved. 
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
