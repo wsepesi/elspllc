@@ -16,32 +16,32 @@ const BusinessTransactions = (): React.ReactElement => {
             <ul className={classes.wrapper}>
                 <li>
                     <Typography>
-                        Environmental support and advice accross a wide range of business transactions
+                        Advising clients on environemntal risks across a wide range of business transactions, including mergers and acquisitions and real estate transactions
                     </Typography>
                 </li>
                 <li>
                     <Typography>
-                        Environmental due diligence for corporate mergers and acquisitions,
+                        Manage and oversee environmental due diligence
                     </Typography>
                 </li>
                 <li>
                     <Typography>
-                        Post-acquisition self disclosures
+                        Allocating environmental risks through transactional documents, environmental indemnities and alternative risk mitigation
                     </Typography>
                 </li>
                 <li>
                     <Typography>
-                        Environmental issues for real estate transactions
+                        Assistance in obtaining agency liability assurance letters
                     </Typography>
                 </li>
                 <li>
                     <Typography>
-                        Assistance with agency liability assurance letters and BFPP requirements
+                        Support clients in investigating, buying or selling, cleaning up, and redeveloping contaminated property
                     </Typography>
                 </li>
                 <li>
                     <Typography>
-                        Environmental legal support for property clean up, redevelop of contaminated property, Brownfield redevelopment and voluntary cleanups
+                        Work closely with and manage environmental consultants during and after pre-acquisition due diligence
                     </Typography>
                 </li>
             </ul>

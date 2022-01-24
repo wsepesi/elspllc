@@ -21,11 +21,13 @@ const useStyles = makeStyles({
     centered: {
         display: 'flex',
         flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     photo: {
         margin: '0px 0px 0px 20px',
         height: '45vh',
-        maxWidth: '30vw'
+        // maxWidth: '30vw'
     }
 })
 
@@ -39,17 +41,21 @@ const FullAbout = (): React.ReactElement => {
         //     </div>
             <div className={classes.text}>
                 <Typography variant="body1">
-                    Environmental law services provided by Environmental Law and Science, PLLC are informed by our experiences as in-house environmental counsel at a Fortune 100 diversified, multi-national conglomerate, at Am Law 100 law firms, in solo practice and in environmental consulting.  We provide strong client advocacy, coupled with collaborative problem solving and practical solutions.
+                    Environmental law services provided by Environmental Law and Science, PLLC are informed by experiences as in-house environmental counsel at a Fortune 100 diversified, multi-national conglomerate, at Am Law 100 law firms, in solo practice and in environmental consulting.  We provide strong client advocacy, coupled with collaborative problem solving and practical solutions.
                 </Typography>
                 <br />
                 <div className={classes.centered}>
                     <div>
                         <Typography variant="body1">
-                            We work with businesses big and small, from startups to Fortune 100 companies, including manufacturers, commercial businesses, investors, financial instutions and property developers. In each situation we work to address their specific environmental needs.  We also team with law firms that require environmental law expertise for mergers and acquisitions, property transactions and clients facing environmental enforcement actions. Environmental Law and Science also provide environmental law expertise for general counsel offices lacking dedicated in-house environmental attorneys.
+                            We work with businesses big and small, from startups to Fortune 100 companies. Clients have included manufacturers, technology companies, municipalities, resort hotels, commercial businesses, investors, financial institutions and property developers. In each situation we work to address each client's specific environmental law needs.  
                         </Typography>
                         <br />
                         <Typography variant="body1">
-                            Over the years, we have addressed environmental law issues in the courtroom and the board room, at the factory floor and Superfund sites.  Whether in the conference room, on a Zoom call, before a judge or at a regulatory agency, we have provided sophisticated, timely, practical and cost-effective environmental legal and regulatory representation and advice.  
+                            We also team with law firms that require environmental law expertise in mergers and acquisitions, property transactions and clients facing environmental enforcement actions. Environmental Law and Science also provide environmental law expertise to general counsels at companies lacking dedicated in-house environmental attorneys.
+                        </Typography>
+                        <br />
+                        <Typography variant="body1">
+                            Over the years, we have addressed environmental law challenges in the courtroom and the board room, at the factory floor and at hazardous waste sites. Whether in the conference room, on a Zoom call, before a judge or at a regulatory agency, we provide sophisticated, timely, practical and cost-effective environmental legal and regulatory representation and advice.  
                         </Typography>
                     </div>
                     <img src='/images/conference.png' alt='Jeff giving a talk at a conference' className={classes.photo}/>

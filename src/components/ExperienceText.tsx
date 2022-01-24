@@ -11,11 +11,12 @@ const useStyles = makeStyles({
     photo: {
         margin: '0px 20px 0px 0px',
         height: 'auto',
-        maxHeight: '45vh',
-        maxWidth: '30vw',
+        maxHeight: '35vh',
+        // maxWidth: '30vw',
     },
     wrapper: {
-        width: '65%'
+        width: '65%',
+        margin: '0px 10px 0px 0px'
     }
 })
 
@@ -37,7 +38,9 @@ const ExperienceText = (): React.ReactElement => {
             </Typography>
             <br />
             <Typography variant="body1">
-                Jeff has practiced environmental law for over 20 years at AmLaw 100 and mid-size law firms and in a solo practice he has addressed a broad range of  environmental regulatory compliance, transactional and environmental litigation matters for clients ranging from oil companies to resort hotels.  Jeff also served as in-house environmental counsel at 3M, where his portfolio included facility environmental, safety and health, TSCA compliance, site remediation, third party/legacy sites and PFAS issues.
+                Jeff has practiced environmental law for over 25 years at AmLaw 100 and mid-size law firms and in a solo practice. 
+                During this time, he has addressed a broad range of environmental regulatory compliance, transactional and environmental litigation matters for clients ranging from oil companies to resort hotels. Jeff recently served as in-house environmental counsel at 3M Company, where his portfolio included facility environmental, safety and health, audits, OSHA complicance, TSCA compliance, site remediation, third party/legacy sites and PFAS issues.
+                He also served on 3M's Institutional Review Board for human subject research.
             </Typography>
         </div>
     )

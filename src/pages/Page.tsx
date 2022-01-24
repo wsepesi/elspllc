@@ -2,7 +2,7 @@ import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import React from 'react'
 import { SYSTEM_COLORS } from '../configs/colors'
-import background from '../lake.png'
+import background from '../lake_4.jpg'
 import { makeStyles } from "@material-ui/styles"
 
 type Props = {

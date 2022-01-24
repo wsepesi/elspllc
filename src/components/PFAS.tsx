@@ -16,12 +16,7 @@ const PFAS = (): React.ReactElement => {
             <ul className={classes.wrapper}>
                 <li>
                     <Typography>
-                        Emerging contaminants
-                    </Typography>
-                </li>
-                <li>
-                    <Typography>
-                        Broad experience, knowledge and understanding of PFAS, including emerging regulations, policies, health science, remediation and litigation.
+                        Advice and guidance on PFAS issues, including emerging federal and state laws, regulations, policies, use restrictions, health science, remediation and litigation.
                     </Typography>
                 </li>
                 <li>
@@ -31,7 +26,17 @@ const PFAS = (): React.ReactElement => {
                 </li>
                 <li>
                     <Typography>           
-                        EPCRA compliance, including TRI, Tier II and release reporting
+                        Emergency Planning and Community Right-to-Know Act (EPRCA) notification and reporting
+                    </Typography>
+                </li>
+                <li>
+                    <Typography>           
+                        Chemical release reporting
+                    </Typography>
+                </li>
+                <li>
+                    <Typography>           
+                        Emerging chemical management concerns
                     </Typography>
                 </li>
                 <li>
