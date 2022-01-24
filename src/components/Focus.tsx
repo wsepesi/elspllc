@@ -13,7 +13,8 @@ const useStyles = makeStyles({
         fontWeight: 'bold'
     },
     img: {
-        width: '100%',
+        width: '15vw',
+        height: '15vw',
     },
     text: {
         width: '50%'
@@ -27,6 +28,10 @@ const useStyles = makeStyles({
     },
     item: {
         margin: '5px 0px',
+    },
+    nospace: {
+        margin: '0px',
+        width: '15vw'
     }
 })
 
@@ -37,32 +42,45 @@ const Focus = (): React.ReactElement => {
             <div className={classes.wrapper}>
                 <div className={classes.text}>
                     <Typography>
-                            Environmental Law and Science, PLLC has experience across a wide range of environmental law matters and issues at the federal level and in many states.  Our core practice focus fall into four areas:
+                        Environmental Law and Science, PLLC has experience with a wide range of environmental law matters and challenges at the federal level and in many states. 
+                        Our practice focuses on four primary areas:
                     </Typography>
                     <ul>
                         <li className={classes.item}>
                             <Typography>
-                                <span className={classes.emph}>Environmental Compliance and Advocacy </span>– advising and supporting clients in complying with the vast network of laws addressing air, water and waste, as well defense of agency actions.
+                                <span className={classes.emph}>Environmental Compliance and Advocacy </span>– advising and supporting clients in complying with the vast network of laws addressing air, water and waste, including permitting and auditing, as well the defense of agency enforcement actions.
                             </Typography>
                         </li>
                         <li className={classes.item}>
                             <Typography>
-                                <span className={classes.emph}>Contaminated Sites and Brownfield Redevelopment </span>- providing legal support to clients regarding liability of environmental legacy site liabilities, as well as the clean up and redevelop of contaminated property.
+                                <span className={classes.emph}>Contaminated Sites and Brownfields </span>- providing legal support to clients regarding potential liability from third party and legacy waste sites, as well as the cleanup and redevelop of contaminated property.
                             </Typography>
                         </li>
                         <li className={classes.item}>
                             <Typography>
-                                <span className={classes.emph}>Transactional Advice and Representation </span>– assisting clients in addressing the environmental aspects of corporate, real estate and other transactions
+                                <span className={classes.emph}>Transactional Advice </span>– assisting clients with the environmental aspects of corporate, real estate and other business transactions
                             </Typography>
                         </li>
                         <li className={classes.item}>
                             <Typography>
-                                <span className={classes.emph}>PFAS and Chemical Regulation </span>– providing strategic and compliance advice to clients on chemical product regulation, including emerging chemicals such as PFAS
+                                <span className={classes.emph}>PFAS and Chemical Regulation </span>– providing strategic and compliance advice to clients on chemical product regulation, including PFAS and other emerging chemicals
                             </Typography>
                         </li>
                     </ul>
+                    <Typography>
+                        Beyond these core areas, we have experience in a broad array of environmental, health and safety issues, across the states, from Minnesota to the US Virgin Islands.
+                    </Typography>
                 </div>
-                <div className={classes.space}><img className={classes.img} src="/images/lab.jpg" alt="Jeff working in a lab" /></div>
+                <div className={classes.space}>
+                    <div className={classes.nospace}>
+                        <img className={classes.img} src="/images/lab.jpg" alt="Jeff working in a lab" />
+                        <img className={classes.img} src='/images/drums_color.png' alt='Waste drums'/>
+                    </div>
+                    <div className={classes.nospace}>
+                        <img className={classes.img} src='/images/red.png' alt='Superfund site on the US Virgin Islands'/>
+                        <img className={classes.img} src="/images/conference_2.png" alt="Jeff presenting at a conference" />
+                    </div>
+                </div>
             </div>
             
         </div>

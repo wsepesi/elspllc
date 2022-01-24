@@ -43,13 +43,13 @@ const CorePanel = (): React.ReactElement => {
                 <Typography variant="h1" className={classes.title}>core practice areas</Typography>
                 <div className={classes.panels}>
                     <div>
-                        <Panel link={"practice_focus/#compliance"}>Environmental Regulatory Compliance and Advocacy</Panel>
+                        <Panel link={"practice_focus/#compliance"}>Environmental Compliance and Advocacy</Panel>
                         {/* FIXME: sublinks page location */}
-                        <Panel link={"practice_focus/#business"}>Transactional Advice and Representation</Panel>
+                        <Panel link={"practice_focus/#business"}>Transactional Advice</Panel>
                     </div>
                     <div>
-                        <Panel link={"practice_focus/#contaminated"}>Contaminated Sites and Brownfield Development</Panel>
-                        <Panel link={"practice_focus/#pfas"}>PFAS and Other Emerging Contaminents</Panel>
+                        <Panel link={"practice_focus/#contaminated"}>Contaminated Sites and Brownfields</Panel>
+                        <Panel link={"practice_focus/#pfas"}>PFAS and Chemical Regulation</Panel>
                     </div>
                 </div>
             </div>

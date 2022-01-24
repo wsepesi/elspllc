@@ -4,7 +4,7 @@ import CorePanel from '../components/CorePanel'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import React from 'react'
-import background from '../lake.png'
+import background from '../lake_4.jpg'
 import { makeStyles } from "@material-ui/styles"
 
 const useStyles = makeStyles({

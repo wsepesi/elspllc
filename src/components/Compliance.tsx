@@ -12,7 +12,7 @@ const useStyles = makeStyles({
 const Compliance = (): React.ReactElement => {
     const classes = useStyles()
     return(
-        <CoreTemplate mode="dark" title="environmental compliance" img="regulation" id="compliance">
+        <CoreTemplate mode="dark" title="environmental compliance" img="epa" id="compliance">
             <ul className={classes.wrapper}>
                 <li>
                     <Typography>
@@ -21,12 +21,12 @@ const Compliance = (): React.ReactElement => {
                 </li>
                 <li>
                     <Typography>
-                        Environmental auditing, EHS compliance programs, internal investigations, reporting and voluntary self-disclosures.
+                        Environmental auditing, EHS compliance programs, internal investigations, release reporting and voluntary self-disclosures.
                     </Typography>
                 </li>
                 <li>
                     <Typography>
-                        Enforcement response support, including agency inspections, information requests, and enforcement actions
+                        Enforcement response support for agency inspections, information requests, and enforcement actions
                     </Typography>
                 </li>
                 <li>
@@ -36,7 +36,7 @@ const Compliance = (): React.ReactElement => {
                 </li>
                 <li>
                     <Typography>
-                        Occupational safety and health compliance
+                        Occupational safety and health law compliance
                     </Typography>
                 </li>
                 <li>
