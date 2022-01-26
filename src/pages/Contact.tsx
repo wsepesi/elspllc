@@ -1,5 +1,5 @@
-import { Card, IconButton, Typography } from '@material-ui/core'
-import { LinkedIn, Mail, Phone } from '@material-ui/icons'
+import { Card, Typography } from '@material-ui/core'
+import { Mail, Phone } from '@material-ui/icons'
 
 import Page from './Page'
 import React from 'react'
@@ -22,8 +22,8 @@ const useStyles = makeStyles({
         borderRadius: 0,
         backgroundColor: SYSTEM_COLORS.WHITE,
         opacity: .95,
-        width: '50vw',
-        height: '30vh',
+        width: '70vw',
+        height: '40vh',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-evenly',
@@ -39,9 +39,9 @@ const useStyles = makeStyles({
     },
     contact: {
         display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'space-evenly',
-        alignItems: 'center',
+        flexDirection: 'column',
+        justifyContent: 'flex-start',
+        alignItems: 'flex-start',
     },
     type: {
         display: 'flex',
@@ -51,10 +51,23 @@ const useStyles = makeStyles({
         justifyContent: 'center',
     },
     icon: {
-        margin: '0px 10px'
+        margin: '0px 10px 0px 0px'
     },
     in: {
         color: SYSTEM_COLORS.BLACK,
+    },
+    content: {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        width: '50vw'
+    },
+    address: {
+        display: 'flex',
+        alignContent: 'center',
+        justifyContent: 'center',
+        alignItems: 'center',
     }
 })
 
@@ -63,31 +76,34 @@ const Contact = (): React.ReactElement => {
     return(
         <Page>
             <div className={classes.wrapper}>
-                {/* <Typography variant='h3'>
-                    Contact Us
-                </Typography>
-                <Typography className={classes.middle} variant='body1'>
-                    email or something
-                </Typography> */}
                 <Card className={classes.card}>
                     <Typography variant='h3'>
                         Contact Us
                     </Typography>
-                    <div className={classes.contact}>
-                        <div className={classes.type}>
-                            <Mail className={classes.icon} />
-                            <Typography variant='body1'>
-                                j.sepesi@att.net
+                    <div className={classes.content}>
+                        <div className={classes.address}>
+                            <Typography variant="body1">
+                                Environmental Law and Science, PLLC<br />
+                                8389 Seneca Pointe<br />
+                                Eden Prairie, MN 55347
                             </Typography>
                         </div>
-                        <IconButton className={classes.in} href="https://www.linkedin.com/in/jeffery-sepesi-24980315">
-                            <LinkedIn />
-                        </IconButton>
-                        <div className={classes.type}> 
-                            <Phone className={classes.icon} />
-                            <Typography variant='body1'>
-                                (952) 426-8279
-                            </Typography>
+                        <div className={classes.contact}>
+                            <div className={classes.type}>
+                                <Mail className={classes.icon} />
+                                <Typography variant='body1'>
+                                    js.envirolawsci@att.net
+                                </Typography>
+                            </div>
+                            {/* <IconButton className={classes.in} href="https://www.linkedin.com/in/jeffery-sepesi-24980315">
+                                <LinkedIn />
+                            </IconButton> */}
+                            <div className={classes.type}> 
+                                <Phone className={classes.icon} />
+                                <Typography variant='body1'>
+                                    (952) 426-8279
+                                </Typography>
+                            </div>
                         </div>
                     </div>
                 </Card>

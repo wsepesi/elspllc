@@ -33,7 +33,7 @@ const Footer = (): React.ReactElement => {
     return(
         <div className={classes.wrapper}>
             <Typography className={classes.text}>
-                © 2021 Environmental Law and Science PLLC. All rights reserved.
+                © 2021 Environmental Law and Science, PLLC. All rights reserved.
             </Typography>
             <IconButton className={classes.icon} href="https://www.linkedin.com/in/jeffery-sepesi-24980315">
                 <LinkedIn />
