@@ -48,12 +48,12 @@ const Focus = (): React.ReactElement => {
                     <ul>
                         <li className={classes.item}>
                             <Typography>
-                                <span className={classes.emph}>Environmental Compliance and Advocacy </span>– advising and supporting clients in complying with the vast network of laws addressing air, water and waste, including permitting and auditing, as well the defense of agency enforcement actions.
+                                <span className={classes.emph}>Environmental Compliance and Advocacy </span>– advising and supporting clients in complying with the vast network of laws addressing air, water and waste, including permitting and auditing, as well the defense of agency enforcement actions
                             </Typography>
                         </li>
                         <li className={classes.item}>
                             <Typography>
-                                <span className={classes.emph}>Contaminated Sites and Brownfields </span>- providing legal support to clients regarding potential liability from third party and legacy waste sites, as well as the cleanup and redevelop of contaminated property.
+                                <span className={classes.emph}>Contaminated Sites and Brownfields </span>- providing legal support to clients regarding potential liability from third party and legacy waste sites, as well as the cleanup and redevelop of contaminated property
                             </Typography>
                         </li>
                         <li className={classes.item}>
@@ -68,7 +68,7 @@ const Focus = (): React.ReactElement => {
                         </li>
                     </ul>
                     <Typography>
-                        Beyond these core areas, we have experience in a broad array of environmental, health and safety issues, across the states, from Minnesota to the US Virgin Islands.
+                        Beyond these core areas, we have experience in a broad array of environmental, health and safety law issues, at the federal level and across the states, from Minnesota to the US Virgin Islands.
                     </Typography>
                 </div>
                 <div className={classes.space}>

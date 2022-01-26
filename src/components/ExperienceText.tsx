@@ -11,12 +11,15 @@ const useStyles = makeStyles({
     photo: {
         margin: '0px 20px 0px 0px',
         height: 'auto',
-        maxHeight: '35vh',
+        maxHeight: '40vh',
         // maxWidth: '30vw',
     },
     wrapper: {
         width: '65%',
         margin: '0px 10px 0px 0px'
+    },
+    name: {
+        margin: '0px 0px 5px 0px'
     }
 })
 
@@ -27,8 +30,11 @@ const ExperienceText = (): React.ReactElement => {
             <div className={classes.centered}>
                 <img src='/images/headshot.png' alt='Jeff Sepesi' className={classes.photo}/>
                 <div>
+                    <Typography variant="h5" className={classes.name}>
+                        Jeffery A. Sepesi
+                    </Typography>
                     <Typography variant="body1">
-                    Jeff’s professional experience began with a start up environmental testing and consulting company, where he literally climbed smokestacks, went down sewers and ran an environmental laboratory.  He created his own interdisciplinary master’s program in hazardous waste management at the University of Michigan School of Public Health taking classes ranging from risk assessment and science policy to environmental engineering.   
+                    Jeff's professional experience began with a start up environmental testing and consulting company, where he literally climbed smokestacks, went down sewers and ran an environmental laboratory.  He created his own interdisciplinary master’s program in hazardous waste management at the University of Michigan School of Public Health taking classes ranging from risk assessment and science policy to environmental engineering.   
                     </Typography>
                 </div>
             </div>

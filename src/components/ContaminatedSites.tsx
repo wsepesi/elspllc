@@ -31,7 +31,7 @@ const ContaminatedSites = (): React.ReactElement => {
                 </li>
                 <li>
                     <Typography>
-                        Provide environmental legal support for cleanup and redevelop of contaminated properties, including under state voluntary cleanup programs
+                        Cleanup and redevelop of contaminated properties, including under state voluntary cleanup programs
                     </Typography>
                 </li>
                 <li>

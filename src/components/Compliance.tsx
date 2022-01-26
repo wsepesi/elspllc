@@ -31,7 +31,7 @@ const Compliance = (): React.ReactElement => {
                 </li>
                 <li>
                     <Typography>
-                        Compliance counseling, permitting, strategic planning, advocacy and enforcement response support for RCRA, Clean Water Act and Clean Air Act matters, including state law equivalents
+                        Compliance counseling, permitting, strategic planning, advocacy and enforcement response support for most Federal environmental laws and state law equivalents, including RCRA, CWA, CAA, EPCRA and TSCA
                     </Typography>
                 </li>
                 <li>

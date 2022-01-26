@@ -40,7 +40,7 @@ const CorePanel = (): React.ReactElement => {
         <div className={classes.wrapper}>
             <img className={classes.photo} src='/images/fire.jpg' alt='Cuyahoga River Fire'/>
             <div className={classes.text}>
-                <Typography variant="h1" className={classes.title}>core practice areas</Typography>
+                <Typography variant="h1" className={classes.title}>practice focus</Typography>
                 <div className={classes.panels}>
                     <div>
                         <Panel link={"practice_focus/#compliance"}>Environmental Compliance and Advocacy</Panel>
