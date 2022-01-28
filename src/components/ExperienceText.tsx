@@ -11,7 +11,7 @@ const useStyles = makeStyles({
     photo: {
         margin: '0px 20px 0px 0px',
         height: 'auto',
-        maxHeight: '40vh',
+        maxHeight: '30vh',
         // maxWidth: '30vw',
     },
     wrapper: {
