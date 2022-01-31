@@ -17,12 +17,13 @@ const useStyles = makeStyles({
     },
     one: {
         height: '50vh',
-        width: '20vw',
+        width: '22vw',
         margin: '0px 2vw 0px 0px',
         borderRadius: 0,
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
+        alignContent: 'center',
         // background: 'url(/images/ladder.jpg)',
         // backgroundPosition: 'center',
         // backgroundSize: 'cover',
@@ -95,6 +96,14 @@ const useStyles = makeStyles({
         border: 'none',
         // height: '20px',
         // width: '20px',
+    },
+    text: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        alignContent: 'center',
+        textAlign: 'center',
+        margin: '0px 4px'
     }
 })
 
@@ -107,9 +116,9 @@ const GetToKnowUs = (): React.ReactElement => {
                 <hr className={classes.rule}/>
             </div>
             <div className={classes.outer}>
-                <CardActionArea href='/presentations'>
+                <CardActionArea href='/representative_experience'>
                     <Card className={classes.one}>
-                        <Typography variant="h4">Presentations</Typography>
+                        <Typography variant="h4" className={classes.text}>Representative Experience</Typography>
                     </Card>
                 </CardActionArea>
                 <div className={classes.inner}>

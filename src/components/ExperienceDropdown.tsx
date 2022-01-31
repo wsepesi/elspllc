@@ -187,6 +187,21 @@ const ExperienceDropdown = (): React.ReactElement => {
                     </Typography>
                 </AccordionDetails>
             </Accordion>
+            <Accordion>
+                <AccordionSummary
+                onClick={() => handleClick('representative_experience')}
+                aria-controls="panel2a-content"
+                id="panel2a-header"
+                >
+                    <Typography>Representative Experience</Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                    <Typography>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+                        malesuada lacus ex, sit amet blandit leo lobortis eget.
+                    </Typography>
+                </AccordionDetails>
+            </Accordion>
         </div>
     )
 }
