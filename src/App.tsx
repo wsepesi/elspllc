@@ -12,6 +12,7 @@ import Home from './pages/Home';
 import PracticeFocus from './pages/PracticeFocus';
 import Presentations from './pages/Presentations';
 import React from 'react'
+import RepExp from './pages/RepExp';
 
 const App = (): React.ReactElement => {
   return (
@@ -22,6 +23,7 @@ const App = (): React.ReactElement => {
       <Route path="/practice_focus" element={<PracticeFocus />} />
       <Route path="/presentations" element={<Presentations />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/representative_experience" element={<RepExp />} />
     </Routes>
   );
 }
