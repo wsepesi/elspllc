@@ -26,7 +26,7 @@ const PFAS = (): React.ReactElement => {
                 </li>
                 <li>
                     <Typography>           
-                        EPRCA notification and reporting
+                        EPCRA notification and reporting
                     </Typography>
                 </li>
                 <li>
