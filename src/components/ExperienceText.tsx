@@ -45,7 +45,7 @@ const ExperienceText = (): React.ReactElement => {
             <br />
             <Typography variant="body1">
                 Jeff has practiced environmental law for over 25 years at AmLaw 100 and mid-size law firms and in a solo practice. 
-                During this time, he has addressed a broad range of environmental regulatory compliance, transactional and environmental litigation matters for clients ranging from oil companies to resort hotels. Jeff recently served as in-house environmental counsel at 3M Company, where his portfolio included facility environmental, safety and health, audits, OSHA complicance, TSCA compliance, site remediation, third party/legacy sites and PFAS issues.
+                During this time, he has addressed a broad range of environmental regulatory compliance, transactional and environmental litigation matters for clients ranging from oil companies to resort hotels. Jeff recently served as in-house environmental counsel at 3M Company, where his portfolio included facility environmental, safety and health, audits, OSHA compliance, TSCA compliance, site remediation, third party/legacy sites and PFAS issues.
                 He also served on 3M's Institutional Review Board for human subject research.
             </Typography>
         </div>
