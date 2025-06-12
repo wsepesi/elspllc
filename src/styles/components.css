@@ -1,0 +1,38 @@
+/* Custom component styles that can't be easily replicated with Tailwind utilities */
+
+@keyframes textEffect {
+  0% {
+    background-position: right bottom;
+  }
+  100% {
+    background-position: left bottom;
+  }
+}
+
+.hover-underline {
+  position: relative;
+}
+
+.hover-underline::after {
+  content: '';
+  position: absolute;
+  width: 90%;
+  transform: scaleX(0) translateX(-50%);
+  height: 3px;
+  bottom: 0;
+  left: 50%;
+  background-color: #000000;
+  transform-origin: bottom left;
+  transition: transform 0.2s ease-out;
+}
+
+.hover-underline:hover::after {
+  transform: scaleX(1) translateX(-50%);
+  transform-origin: bottom left;
+}
+
+.hover-underline.active::after {
+  transform: scaleX(1) translateX(-50%);
+  left: 50%;
+  width: 90%;
+}

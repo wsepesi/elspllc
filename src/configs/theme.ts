@@ -1,232 +1,118 @@
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
-import './global.css';
+/* eslint-disable */
+import './global.css'
 
 import { SYSTEM_COLORS } from './colors'
-import { createTheme } from '@material-ui/core/styles';
 
-const BASE_FONT_SIZE = 16;
+const BASE_FONT_SIZE = 16
 
-export const getRemFromPx = (fontSizePx: number): string => `${(fontSizePx / BASE_FONT_SIZE).toFixed(4)}rem`;
+export const getRemFromPx = (fontSizePx: number): string =>
+  `${(fontSizePx / BASE_FONT_SIZE).toFixed(4)}rem`
 
-const theme = createTheme({
-	palette: {
-		primary: {
-			main: SYSTEM_COLORS.SECONDARY,
-			contrastText: '#FFF'
-		},
-		secondary: {
-			main: '#FFF'
-		}
-	},
-	typography: {
-		fontFamily: ['Libre Franklin', 'sans-serif'].join(','),
-		h1: {
-			fontSize: getRemFromPx(64),
-			//fontFamily: ['Aleo', 'serif'].join(','),
-			lineHeight: getRemFromPx(78),
-			fontWeight: 400
-		},
-        h2: {
-            fontSize: getRemFromPx(76),
-            lineHeight: getRemFromPx(92),
-            fontWeight: 400
+// Unified theme configuration for the application
+// This replaces the MUI theme and provides configuration for both Tailwind and shadcn/ui
+export const theme = {
+  colors: {
+    primary: SYSTEM_COLORS.PRIMARY,
+    primaryShade: SYSTEM_COLORS.PRIMARY_SHADE,
+    secondary: SYSTEM_COLORS.SECONDARY,
+    secondaryShade: SYSTEM_COLORS.SECONDARY_SHADE,
+    tertiary: SYSTEM_COLORS.TERTIARY,
+    tertiaryShade: SYSTEM_COLORS.TERTIARY_SHADE,
+    background: SYSTEM_COLORS.BACKGROUND,
+    error: SYSTEM_COLORS.ERROR,
+    gray: SYSTEM_COLORS.GRAY,
+    gray10: SYSTEM_COLORS.GRAY_10,
+    grayShade: SYSTEM_COLORS.GRAY_SHADE,
+    lightGray: SYSTEM_COLORS.LIGHT_GRAY,
+    lightGray30: SYSTEM_COLORS.LIGHT_GRAY_30,
+    white: SYSTEM_COLORS.WHITE,
+    transparentBorder: SYSTEM_COLORS.TRANSPARENT_BORDER,
+    black: SYSTEM_COLORS.BLACK,
+  },
+  typography: {
+    fontFamily: ['Libre Franklin', 'sans-serif'].join(','),
+    sizes: {
+      h1: {
+        fontSize: getRemFromPx(64),
+        lineHeight: getRemFromPx(78),
+        fontWeight: 400,
+        responsive: {
+          md: {
+            fontSize: getRemFromPx(36),
+            lineHeight: getRemFromPx(43),
+          },
         },
-		h3: {
-			fontSize: getRemFromPx(54),
-			lineHeight: getRemFromPx(65),
-			fontWeight: 400
-		},
-		h4: {
-			fontSize: getRemFromPx(40),
-			lineHeight: getRemFromPx(48),
-			fontWeight: 500
-		},
-		h5: {
-			fontSize: getRemFromPx(24),
-			lineHeight: getRemFromPx(29),
-			fontWeight: 400
-		},
-		body1: {
-			// writing
-			fontSize: getRemFromPx(18),
-			lineHeight: getRemFromPx(28),
-            fontWeight: 300
-		},
-		body2: {
-			// header bar
-			fontSize: getRemFromPx(16),
-			lineHeight: getRemFromPx(22),
-            fontWeight: 500
-		},
-		subtitle1: {
-			fontSize: getRemFromPx(32),
-			lineHeight: getRemFromPx(48),
-			fontWeight: 400
-		},
-        subtitle2: {
-            //logo at top
-            fontSize: getRemFromPx(22),
-            lineHeight: getRemFromPx(27),
-            fontStyle: "italic",
-			fontWeight: 'normal'
-        },
-		button: {
-			color: 'backgroundLight',
-			textTransform: 'none',
-			fontSize: getRemFromPx(16),
-			lineHeight: getRemFromPx(24),
-			fontWeight: 600
-		}
-	},
-	breakpoints: {
-		values: {
-			xl: 1280,
-			lg: 950,
-			md: 750,
-			sm: 475,
-			xs: 0
-		}
-	},
-	overrides: {
-		MuiListItem: {
-			button: {
-				margin: '4px 0',
-				borderRadius: 8,
-				'&:hover': {
-					backgroundColor: SYSTEM_COLORS.BACKGROUND
-				}
-			}
-		},
-		MuiListItemText: {
-			primary: {
-				color: SYSTEM_COLORS.GRAY,
-				textShadow: 'none',
-				fontSize: getRemFromPx(12),
-				lineHeight: getRemFromPx(18),
-				fontWeight: 600
-			},
-			secondary: {
-				fontSize: getRemFromPx(14),
-				lineHeight: getRemFromPx(21),
-				fontWeight: 600
-			}
-		},
-		MuiListItemIcon: {
-			root: {
-				color: SYSTEM_COLORS.GRAY
-			}
-		},
-		MuiButton: {
-			text: {},
-			root: {
-				display: 'inline-block',
-				position: 'relative',
-				'&:hover': {
-					backgroundColor: 'transparent' //TODO: do we like this
-				},
-				'&:after': {
-					content: '""',
-					position: 'absolute',
-					width: '90%',
-					transform: 'scaleX(0) translateX(-50%)',
-					height: 3,
-					bottom: 0,
-					left: '50%',
-					backgroundColor: SYSTEM_COLORS.SECONDARY,
-					transformOrigin: 'bottom left',
-					transition: 'transform 0.2s ease-out'
-				},
-				'&:hover:after': {
-					transform: 'scaleX(1) translateX(-50%)',
-					transformOrigin: 'bottom left'
-				},
-				borderRadius: 8
-			},
-			contained: {
-				boxShadow: 'none'
-			},
-			sizeSmall: {
-				fontSize: getRemFromPx(12),
-				lineHeight: getRemFromPx(18),
-				fontWeight: 600,
-				padding: '11px 20px'
-			},
-			sizeLarge: {
-				fontSize: getRemFromPx(16),
-				lineHeight: getRemFromPx(24),
-				fontWeight: 600,
-				padding: '15px 40px'
-			},
-			containedSecondary: {
-				border: `1px solid ${SYSTEM_COLORS.LIGHT_GRAY_30}`,
-				'&:hover': {
-					backgroundColor: SYSTEM_COLORS.BACKGROUND,
-					boxShadow: 'none'
-				}
-			}
-		},
-		MuiTabs: {
-			indicator: {
-				height: 4
-			}
-		},
-		MuiTab: {
-			root: {
-				color: SYSTEM_COLORS.GRAY_SHADE,
-				textShadow: 'none',
-				fontSize: `${getRemFromPx(12)} !important`,
-				lineHeight: `${getRemFromPx(18)} !important`,
-				fontWeight: 600
-			}
-		},
-		MuiInput: {
-			input: {
-				paddingTop: 16,
-				'&::placeholder': {
-					paddingTop: 16
-				}
-			}
-		},
-		MuiPaper: {
-			root: {
-				background: '#FFFFFF'
-			},
-			elevation1: {
-				boxShadow: '0px 3px 3px rgba(0, 0, 0, 0.03)'
-			},
-			rounded: {
-				borderRadius: 16
-			}
-		},
-		MuiPopover: {
-			paper: {
-				boxShadow: '0px 6px 20px rgba(0, 0, 0, 0.12)'
-			}
-		},
-		MuiTableCell: {
-			head: {
-				textShadow: 'none',
-				fontSize: getRemFromPx(13),
-				lineHeight: getRemFromPx(19),
-				color: SYSTEM_COLORS.GRAY
-			}
-		}
-	}
-});
+      },
+      h2: {
+        fontSize: getRemFromPx(76),
+        lineHeight: getRemFromPx(92),
+        fontWeight: 400,
+      },
+      h3: {
+        fontSize: getRemFromPx(54),
+        lineHeight: getRemFromPx(65),
+        fontWeight: 400,
+      },
+      h4: {
+        fontSize: getRemFromPx(40),
+        lineHeight: getRemFromPx(48),
+        fontWeight: 500,
+      },
+      h5: {
+        fontSize: getRemFromPx(24),
+        lineHeight: getRemFromPx(29),
+        fontWeight: 400,
+      },
+      body1: {
+        // writing
+        fontSize: getRemFromPx(18),
+        lineHeight: getRemFromPx(28),
+        fontWeight: 300,
+      },
+      body2: {
+        // header bar
+        fontSize: getRemFromPx(16),
+        lineHeight: getRemFromPx(22),
+        fontWeight: 500,
+      },
+      subtitle1: {
+        fontSize: getRemFromPx(32),
+        lineHeight: getRemFromPx(48),
+        fontWeight: 400,
+      },
+      subtitle2: {
+        //logo at top
+        fontSize: getRemFromPx(22),
+        lineHeight: getRemFromPx(27),
+        fontStyle: 'italic',
+        fontWeight: 'normal',
+      },
+      button: {
+        fontSize: getRemFromPx(16),
+        lineHeight: getRemFromPx(24),
+        fontWeight: 600,
+      },
+    },
+  },
+  breakpoints: {
+    xs: 0,
+    sm: 475,
+    md: 750,
+    lg: 950,
+    xl: 1280,
+  },
+  radius: {
+    sm: 'calc(var(--radius) - 4px)',
+    md: 'calc(var(--radius) - 2px)',
+    lg: 'var(--radius)',
+    xl: 'calc(var(--radius) + 4px)',
+  },
+}
 
-theme.typography.h1 = {
-	...theme.typography.h1,
-	[theme.breakpoints.down('md')]: {
-		fontSize: getRemFromPx(36),
-		lineHeight: getRemFromPx(43)
-	}
-};
-theme.overrides!.MuiListItemText!.primary = {
-	...theme.overrides?.MuiListItemText?.primary,
-	[theme.breakpoints.down('sm')]: {
-		fontSize: getRemFromPx(16),
-		lineHeight: getRemFromPx(24)
-	}
-};
+// Export individual components for easier access
+export const colors = theme.colors
+export const typography = theme.typography
+export const breakpoints = theme.breakpoints
 
-export default theme;
+// Backwards compatibility - keep the default export as the theme object
+export default theme

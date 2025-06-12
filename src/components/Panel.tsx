@@ -1,42 +1,31 @@
-import { Card, CardActionArea, Typography } from '@material-ui/core'
-
 import React from 'react'
-import { makeStyles } from "@material-ui/styles"
+import Link from 'next/link'
+import { Card } from './ui/card'
+import { cn } from '../utils/cn'
 
 type Props = {
-    link: string,
-    children: any,
+  link: string
+  children: any
 }
-
-const useStyles = makeStyles({
-    panel: {
-        // width: '21.25vw',
-        height: '15vh',
-        padding: 24,
-        backgroundColor: 'rgba(255, 255, 255, 1)',
-        boxShadow: '0 20 20 rgba(41, 41, 42, .2)',
-        borderRadius: 0,
-        margin: '5px 5px'
-    },
-    text: {
-        
-    },
-    action: {
-        width: '21.25vw',
-        height: '15vh',
-    }
-})
 
 // add hover effect, add link
 const Panel = (props: Props): React.ReactElement => {
-    const classes = useStyles()
-    return(
-        <CardActionArea href={props.link}>
-            <Card raised className={classes.panel}> 
-                    <Typography variant="h5" className={classes.text}>{props.children}</Typography>
-            </Card>
-        </CardActionArea>
-    )
+  return (
+    <Link
+      href={props.link}
+      className="block hover:scale-105 transition-transform duration-200"
+    >
+      <Card
+        className={cn(
+          'h-[15vh] p-6 bg-white shadow-xl rounded-none m-[5px]',
+          'hover:shadow-2xl transition-shadow duration-200 cursor-pointer',
+          'flex items-center justify-center'
+        )}
+      >
+        <h5 className="text-xl font-medium text-center">{props.children}</h5>
+      </Card>
+    </Link>
+  )
 }
 
 export default Panel

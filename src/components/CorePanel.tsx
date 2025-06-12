@@ -1,60 +1,46 @@
+import Image from 'next/image'
 import Panel from './Panel'
 import React from 'react'
-import { Typography } from '@material-ui/core'
-import { makeStyles } from "@material-ui/styles"
-
-const useStyles = makeStyles({
-    wrapper: {
-        width: '100vw',
-        height: '75vh',
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        backgroundColor: 'rgba(255, 255, 255, 0.9)',
-        // padding: 54
-    },
-    text: {
-        width: '44.375vw',
-        height: '65vh',
-        margin: '5vh 3.75vw 5vh 0'
-    },
-    photo: {
-        width: '44.375vw',
-        height: '65vh',
-        // height: 'auto',
-        margin: '5vh 3.75vw 5vh 3.75vw'
-    },
-    panels: {
-        display: "flex",
-    },
-    title: {
-        fontSize: 76,
-        fontStyle: 'normal',
-        fontWeight: 'normal',
-    }
-})
+import { cn } from '../utils/cn'
 
 const CorePanel = (): React.ReactElement => {
-    const classes = useStyles()
-    return(
-        <div className={classes.wrapper}>
-            <img className={classes.photo} src='/images/fire.jpg' alt='Cuyahoga River Fire'/>
-            <div className={classes.text}>
-                <Typography variant="h1" className={classes.title}>practice focus</Typography>
-                <div className={classes.panels}>
-                    <div>
-                        <Panel link={"practice_focus/#compliance"}>Environmental Compliance and Advocacy</Panel>
-                        {/* FIXME: sublinks page location */}
-                        <Panel link={"practice_focus/#business"}>Transactional Advice</Panel>
-                    </div>
-                    <div>
-                        <Panel link={"practice_focus/#contaminated"}>Contaminated Sites and Brownfields</Panel>
-                        <Panel link={"practice_focus/#pfas"}>PFAS and Chemical Regulation</Panel>
-                    </div>
-                </div>
-            </div>
+  return (
+    <div
+      className={cn(
+        'w-screen h-[75vh] flex justify-center items-center',
+        'bg-white/80 backdrop-blur-sm'
+      )}
+    >
+      <Image
+        className="w-[44.375vw] h-[65vh] m-[5vh_3.75vw_5vh_3.75vw]"
+        src="/images/fire.webp"
+        alt="Cuyahoga River Fire"
+        width={800}
+        height={600}
+        priority
+        placeholder="blur"
+        blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknywtN9Fv2XMGZ9NE8RhNm6Vd8fzxuwS5W7b8X8Wv5kOgb1YCWMGc6KgSCWlCz/8V"
+        style={{ objectFit: 'cover' }}
+      />
+      <div className="w-[44.375vw] h-[65vh] m-[5vh_3.75vw_5vh_0]">
+        <h1 className="text-6xl font-playfair font-normal leading-tight tracking-tight">
+          practice focus
+        </h1>
+        <div className="grid grid-cols-2 gap-x-6 gap-y-4 mt-12">
+          <Panel link={'practice_focus/#compliance'}>
+            Environmental Compliance and Advocacy
+          </Panel>
+          <Panel link={'practice_focus/#contaminated'}>
+            Contaminated Sites and Brownfields
+          </Panel>
+          <Panel link={'practice_focus/#business'}>Transactional Advice</Panel>
+          <Panel link={'practice_focus/#pfas'}>
+            PFAS and Chemical Regulation
+          </Panel>
         </div>
-    )
+      </div>
+    </div>
+  )
 }
 
 export default CorePanel

@@ -1,58 +1,40 @@
+'use client'
+
 import React, { useEffect, useState } from 'react'
 
-import { Button } from '@material-ui/core'
-import { makeStyles } from "@material-ui/styles"
-import { useLocation } from 'react-router-dom'
-
-const useStyles = makeStyles({
-    wrapper: {
-
-    },
-    button: {
-        fontStyle: 'normal',
-        fontWeight: 'normal'
-    },
-    here: {
-        fontStyle: 'normal',
-        fontWeight: 'normal',
-        '&:after': {
-            transform: 'scaleX(1) translateX(-50%)',
-            // transition: 'none', //TODO: do we like this
-            left: '50%',
-            width: '90%'
-        }
-    }
-})
+import { Button } from './ui/button'
+import Link from 'next/link'
+import { cn } from '../utils/cn'
+import { usePathname } from 'next/navigation'
 
 type Props = {
-    text: string,
-    to: string
+  text: string
+  to: string
 }
 
 const NavLink = (props: Props): React.ReactElement => {
-    const [isHere, setIsHere] = useState<boolean>();
-    const location = useLocation().pathname.replace('/', '')
-    const classes = useStyles()
+  const [isHere, setIsHere] = useState<boolean>()
+  const pathname = usePathname()
+  const location = pathname.replace('/', '')
 
-    useEffect(() => {
-        if(props.to === location) {
-            setIsHere(true);
-        }
-        else setIsHere(false);
-    }, [props.to, location])
+  useEffect(() => {
+    if (props.to === location) {
+      setIsHere(true)
+    } else setIsHere(false)
+  }, [props.to, location])
 
-    //TODO: make these buttons, add hover effect, make button hover transparent
-    return(
-        <div className={classes.wrapper}>
-            <Button 
-                // disableFocusRipple={true}
-                // disableElevation={true}
-                // variant="text"
-                href={`/${props.to}`}
-                className={!isHere ? classes.button : classes.here}
-            >{props.text}</Button>
-        </div>
-    )
+  return (
+    <Button
+      variant="ghost"
+      className={cn(
+        'font-normal hover-underline hover:bg-transparent',
+        isHere && 'active'
+      )}
+      asChild
+    >
+      <Link href={`/${props.to}`}>{props.text}</Link>
+    </Button>
+  )
 }
 
 export default NavLink
