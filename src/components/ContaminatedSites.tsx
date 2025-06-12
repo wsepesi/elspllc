@@ -5,7 +5,7 @@ const ContaminatedSites = (): React.ReactElement => {
   return (
     <CoreTemplate
       mode="light"
-      title="contaminated sites"
+      title="contaminated sites and brownfields"
       img="drums"
       id="contaminated"
     >

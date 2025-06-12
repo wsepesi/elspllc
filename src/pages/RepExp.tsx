@@ -85,7 +85,7 @@ const RepExp = (): React.ReactElement => {
         </Typography>
         <br />
         <Typography>
-          <span className="font-bold italic">Transactional Advice:</span>{' '}
+          <span className="font-bold italic">Business Transactions:</span>{' '}
           Advised real estate investment trust on environmental due diligence,
           liability assurance letters and environmental terms of purchase
           agreements for property acquisitions, development and divestitures.

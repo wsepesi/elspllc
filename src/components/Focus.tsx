@@ -35,7 +35,7 @@ const Focus = (): React.ReactElement => {
             </li>
             <li className="my-[5px]">
               <p className="text-base leading-relaxed">
-                <span className="font-bold">Transactional Advice </span>–
+                <span className="font-bold">Business Transactions </span>–
                 assisting clients with the environmental aspects of corporate,
                 real estate and other business transactions
               </p>

@@ -5,7 +5,7 @@ const BusinessTransactions = (): React.ReactElement => {
   return (
     <CoreTemplate
       mode="dark"
-      title="transactional advice"
+      title="business transactions"
       img="business"
       id="business"
     >

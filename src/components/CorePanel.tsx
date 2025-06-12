@@ -33,7 +33,7 @@ const CorePanel = (): React.ReactElement => {
           <Panel link={'practice_focus/#contaminated'}>
             Contaminated Sites and Brownfields
           </Panel>
-          <Panel link={'practice_focus/#business'}>Transactional Advice</Panel>
+          <Panel link={'practice_focus/#business'}>Business Transactions</Panel>
           <Panel link={'practice_focus/#pfas'}>
             PFAS and Chemical Regulation
           </Panel>
