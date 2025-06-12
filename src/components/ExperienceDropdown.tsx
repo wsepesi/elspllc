@@ -96,14 +96,14 @@ const ExperienceDropdown = (): React.ReactElement => {
                 <p className="text-sm">
                   Minnesota State Bar Association, Section on Environmental,
                   Natural Resources & Energy Law: Governing Council Delegate
-                  (2007-2014, 2019-2022), Secretary (2014-2015), Treasurer
+                  (2007-2014, 2019-2025), Secretary (2014-2015), Treasurer
                   (2015-2016), Vice-Chair (2016-2017), Chair (2017-2018)
                 </p>
               </li>
               <li>
                 <p className="text-sm">
                   Minnesota CLE's Minnesota Environmental Institute Planning
-                  Committee (2009-2022)
+                  Committee (2009-2025)
                 </p>
               </li>
               <li>

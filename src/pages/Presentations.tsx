@@ -10,6 +10,13 @@ const Presentations = (): React.ReactElement => {
         <ul className="max-h-full max-w-full w-auto h-auto">
           <li>
             <Typography>
+              "Your Product Has PFAS, Now What? What to Know About PFAS Bans"
+              co-presented with Shalene Thomas at Minnesota CLE's 2024 Minnesota
+              Environmental Institute. April 2024.
+            </Typography>
+          </li>
+          <li>
+            <Typography>
               “PFAS: Current Developments and Future Directions” co-presented
               with Shalene Thomas to Hennepin County Bar Association,
               Environmental Meeting. May 2021.
