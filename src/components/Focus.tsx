@@ -1,90 +1,101 @@
+import Image from 'next/image'
 import React from 'react'
-import { Typography } from '@material-ui/core'
-import { makeStyles } from "@material-ui/styles"
-
-const useStyles = makeStyles({
-    wrapper: {
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        margin: '5vh 0px',
-    },
-    emph: {
-        fontWeight: 'bold'
-    },
-    img: {
-        width: '15vw',
-        height: '15vw',
-    },
-    text: {
-        width: '50%'
-    },
-    space: {
-        width: '50%',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        margin: '0px 3vw'
-    },
-    item: {
-        margin: '5px 0px',
-    },
-    nospace: {
-        margin: '0px',
-        width: '15vw'
-    }
-})
 
 const Focus = (): React.ReactElement => {
-    const classes = useStyles()
-    return(
-        <div>
-            <div className={classes.wrapper}>
-                <div className={classes.text}>
-                    <Typography>
-                        Environmental Law and Science, PLLC has experience with a wide range of environmental law matters and challenges at the federal level and in many states. 
-                        Our practice focuses on four primary areas:
-                    </Typography>
-                    <ul>
-                        <li className={classes.item}>
-                            <Typography>
-                                <span className={classes.emph}>Environmental Compliance and Advocacy </span>– advising and supporting clients in complying with the vast network of laws addressing air, water and waste, including permitting and auditing, as well the defense of agency enforcement actions
-                            </Typography>
-                        </li>
-                        <li className={classes.item}>
-                            <Typography>
-                                <span className={classes.emph}>Contaminated Sites and Brownfields </span>- providing legal support to clients regarding potential liability from third party and legacy waste sites, as well as the cleanup and redevelop of contaminated property
-                            </Typography>
-                        </li>
-                        <li className={classes.item}>
-                            <Typography>
-                                <span className={classes.emph}>Transactional Advice </span>– assisting clients with the environmental aspects of corporate, real estate and other business transactions
-                            </Typography>
-                        </li>
-                        <li className={classes.item}>
-                            <Typography>
-                                <span className={classes.emph}>PFAS and Chemical Regulation </span>– providing strategic and compliance advice to clients on chemical product regulation, including PFAS and other emerging chemicals
-                            </Typography>
-                        </li>
-                    </ul>
-                    <Typography>
-                        Beyond these core areas, we have experience in a broad array of environmental, health and safety law issues, at the federal level and across the states, from Minnesota to the US Virgin Islands.
-                    </Typography>
-                </div>
-                <div className={classes.space}>
-                    <div className={classes.nospace}>
-                        <img className={classes.img} src="/images/lab.jpg" alt="Jeff working in a lab" />
-                        <img className={classes.img} src='/images/drums_color.png' alt='Waste drums'/>
-                    </div>
-                    <div className={classes.nospace}>
-                        <img className={classes.img} src='/images/red.png' alt='Superfund site on the US Virgin Islands'/>
-                        <img className={classes.img} src="/images/conference_2.png" alt="Jeff presenting at a conference" />
-                    </div>
-                </div>
-            </div>
-            
+  return (
+    <div>
+      <div className="flex flex-row justify-between my-[5vh]">
+        <div className="w-1/2">
+          <p className="text-base leading-relaxed mb-4">
+            Environmental Law and Science, PLLC has experience with a wide range
+            of environmental law matters and challenges at the federal level and
+            in many states. Our practice focuses on four primary areas:
+          </p>
+          <ul className="space-y-3">
+            <li className="my-[5px]">
+              <p className="text-base leading-relaxed">
+                <span className="font-bold">
+                  Environmental Compliance and Advocacy{' '}
+                </span>
+                – advising and supporting clients in complying with the vast
+                network of laws addressing air, water and waste, including
+                permitting and auditing, as well the defense of agency
+                enforcement actions
+              </p>
+            </li>
+            <li className="my-[5px]">
+              <p className="text-base leading-relaxed">
+                <span className="font-bold">
+                  Contaminated Sites and Brownfields{' '}
+                </span>
+                - providing legal support to clients regarding potential
+                liability from third party and legacy waste sites, as well as
+                the cleanup and redevelop of contaminated property
+              </p>
+            </li>
+            <li className="my-[5px]">
+              <p className="text-base leading-relaxed">
+                <span className="font-bold">Transactional Advice </span>–
+                assisting clients with the environmental aspects of corporate,
+                real estate and other business transactions
+              </p>
+            </li>
+            <li className="my-[5px]">
+              <p className="text-base leading-relaxed">
+                <span className="font-bold">PFAS and Chemical Regulation </span>
+                – providing strategic and compliance advice to clients on
+                chemical product regulation, including PFAS and other emerging
+                chemicals
+              </p>
+            </li>
+          </ul>
+          <p className="text-base leading-relaxed mt-4">
+            Beyond these core areas, we have experience in a broad array of
+            environmental, health and safety law issues, at the federal level
+            and across the states, from Minnesota to the US Virgin Islands.
+          </p>
         </div>
-    )
+        <div className="w-1/2 flex justify-center items-center ml-[5vw]">
+          <div className="w-[15vw]">
+            <Image
+              className="w-[15vw] h-[15vw]"
+              src="/images/lab.webp"
+              alt="Jeff working in a lab"
+              width={400}
+              height={300}
+              style={{ objectFit: 'cover' }}
+            />
+            <Image
+              className="w-[15vw] h-[15vw]"
+              src="/images/drums_color.webp"
+              alt="Waste drums"
+              width={400}
+              height={300}
+              style={{ objectFit: 'cover' }}
+            />
+          </div>
+          <div className="w-[15vw]">
+            <Image
+              className="w-[15vw] h-[15vw]"
+              src="/images/red.webp"
+              alt="Superfund site on the US Virgin Islands"
+              width={400}
+              height={300}
+              style={{ objectFit: 'cover' }}
+            />
+            <Image
+              className="w-[15vw] h-[15vw]"
+              src="/images/conference_2.webp"
+              alt="Jeff presenting at a conference"
+              width={400}
+              height={300}
+              style={{ objectFit: 'cover' }}
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  )
 }
 
 export default Focus

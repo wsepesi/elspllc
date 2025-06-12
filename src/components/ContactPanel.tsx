@@ -1,92 +1,43 @@
-import { Button, Typography } from '@material-ui/core'
-import React, { useState } from 'react'
+'use client'
 
-import { ArrowForward } from '@material-ui/icons'
-import { Navigate } from 'react-router'
-import { makeStyles } from "@material-ui/styles"
-
-const useStyles = makeStyles({
-    wrapper: {
-        width: '100vw',
-        height: '60vh',
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-    },
-    quote: {
-        fontStyle: 'italic',
-        margin: '10px 0px'
-    },
-    contact: {
-        margin: '3vh 0px 0px 0px',
-        display: 'flex',
-        padding: '0px 0px',
-        '&:after': {
-            width: '100%',
-        }
-    },
-    quoteBox: {
-        // width: 936,
-        // height: 136,
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "left",
-        alignItems: 'center'
-    },
-    photo: {
-        //circle of diameter 96
-        minWidth: '96px',
-        height: '96px',
-        borderRadius: "50%",
-        backgroundColor: "#123456",
-        margin: '5px 20px 5px 0px'
-    },
-    quoteInfo: {
-        height: 'auto',
-        width: 'auto'
-    },
-    source: {
-        color: '#0f8ffd'
-    },
-    centerPanel: {
-        width: '70vw',
-        // minHeight: '30vh',
-        background: '#F3F3F2',
-        padding: '5vh 5vw',
-    },
-    arrow: {
-        margin: '0px 0px 0px 10px',
-        width: '30px',
-        height: '30px',
-    }
-})
+import React from 'react'
+import { useRouter } from 'next/navigation'
+import { ArrowRight } from 'lucide-react'
+import { Button } from './ui/button'
 
 const ContactPanel = (): React.ReactElement => {
-    const [redirect, setRedirect] = useState<boolean>(false);
-    const classes = useStyles()
-    return(
-        <div className={classes.wrapper}>
-            <div className={classes.centerPanel}>
-                <div className={classes.quoteBox}>
-                    <div className={classes.photo}>
+  const router = useRouter()
 
-                    </div>
-                    <div className={classes.quoteInfo}>
-                        <Typography variant="h5" className={classes.quote}>
-                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean volutpat eleifend ante at iaculis. Proin vel orci lobortis, mollis lorem vitae, auctor augue. Cras egestas velit ac urna luctus porta."
-                        </Typography>
-                        <Typography variant="h5" className={classes.source}>
-                            Michael Sepesi, Esq.
-                        </Typography>
-                    </div>
-                </div>
-                <Button className={classes.contact} onClick={() => setRedirect(true)}>
-                    <Typography variant="h4">contact us</Typography> <ArrowForward className={classes.arrow}/>
-                </Button>
-            </div>
-            {redirect && <Navigate to="/contact"/>}
+  const handleContactClick = () => {
+    router.push('/contact')
+  }
+
+  return (
+    <div className="w-screen h-[60vh] flex justify-center items-center">
+      <div className="w-[70vw] bg-white/80 backdrop-blur-sm p-[5vh_5vw] rounded-lg">
+        <div className="flex flex-row justify-start items-center">
+          <div className="min-w-24 h-24 rounded-full bg-[#123456] mr-5 my-[5px]"></div>
+          <div className="h-auto w-auto">
+            <h5 className="text-xl italic my-[10px]">
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+              volutpat eleifend ante at iaculis. Proin vel orci lobortis, mollis
+              lorem vitae, auctor augue. Cras egestas velit ac urna luctus
+              porta."
+            </h5>
+            <h5 className="text-xl text-[#0f8ffd]">Michael Sepesi, Esq.</h5>
+          </div>
         </div>
-    )
+        <Button
+          variant="ghost"
+          className="mt-[3vh] flex items-center p-0 hover-underline text-left justify-start"
+          onClick={handleContactClick}
+        >
+          <h4 className="text-3xl">contact us</h4>
+          <ArrowRight className="ml-[10px] w-[30px] h-[30px]" />
+        </Button>
+      </div>
+    </div>
+  )
 }
 
 export default ContactPanel

@@ -1,15 +1,54 @@
-@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400&display=swap');
+@import 'tailwindcss';
+@tailwind utilities;
 
-html {
-    /* overflow-y: scroll; */
-    /* overflow-y: hidden; */
-    overflow-x: hidden;
-    overflow-y: overlay;
+/* Fonts now loaded via next/font in layout.tsx */
+@import '../styles/components.css';
+@import 'tw-animate-css';
+
+/* Typography Enhancements */
+.font-playfair {
+  letter-spacing: -0.02em;
 }
 
-/* .scrollbox {
-    width: 10em;
-    height: 10em;
-    overflow: auto;
-    visibility: hidden;
-} */
+/* Add subtle text shadow to large headings */
+h1.font-playfair {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Improve readability of body text */
+p {
+  line-height: 1.7;
+  color: #333;
+}
+
+/* Fix text color on dark backgrounds */
+.bg-black,
+.bg-gray-900,
+.bg-slate-900,
+[class*='bg-black'],
+[class*='bg-gray-900'],
+[class*='bg-slate-900'],
+.bg-\[\#1a1a1a\]\/90 {
+  color: white;
+}
+
+.bg-black *,
+.bg-gray-900 *,
+.bg-slate-900 *,
+[class*='bg-black'] *,
+[class*='bg-gray-900'] *,
+[class*='bg-slate-900'] *,
+.bg-\[\#1a1a1a\]\/90 * {
+  color: inherit;
+}
+
+/* Override p tag color on dark backgrounds */
+.bg-black p,
+.bg-gray-900 p,
+.bg-slate-900 p,
+[class*='bg-black'] p,
+[class*='bg-gray-900'] p,
+[class*='bg-slate-900'] p,
+.bg-\[\#1a1a1a\]\/90 p {
+  color: white !important;
+}
