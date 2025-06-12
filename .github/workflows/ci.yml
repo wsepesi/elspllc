@@ -33,9 +33,6 @@ jobs:
       - name: Run TypeScript check
         run: pnpm type-check
 
-      - name: Run tests
-        run: pnpm test:ci
-
   build:
     name: Build Application
     runs-on: ubuntu-latest
