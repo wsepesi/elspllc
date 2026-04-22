@@ -15,7 +15,7 @@ const ExperienceDropdown = (): React.ReactElement => {
   }
 
   return (
-    <div className="w-[35%] rounded-md">
+    <div className="w-full lg:w-2/5 rounded-md">
       <Accordion type="single" collapsible className="w-full">
         <AccordionItem value="education">
           <AccordionTrigger className="px-4">Education</AccordionTrigger>

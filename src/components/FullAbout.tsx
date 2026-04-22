@@ -18,13 +18,13 @@ const FullAbout = (): React.ReactElement => {
           →{' '}
           <a
             href="/experience"
-            className="text-gray-700 hover:text-gray-900 hover:underline italic"
+            className="text-secondary hover:text-primary-shade hover:underline italic"
           >
             Our Experience
           </a>
         </div>
       </div>
-      <div className="flex flex-row justify-center items-center mb-4">
+      <div className="flex flex-col md:flex-row justify-center items-center mb-4 gap-5">
         <div>
           <p className="text-base leading-relaxed mb-2">
             We work with businesses big and small, from startups to Fortune 100
@@ -39,7 +39,7 @@ const FullAbout = (): React.ReactElement => {
               →{' '}
               <a
                 href="/representative_experience"
-                className="text-gray-700 hover:text-gray-900 hover:underline italic"
+                className="text-secondary hover:text-primary-shade hover:underline italic"
               >
                 Representative Experience
               </a>
@@ -64,7 +64,7 @@ const FullAbout = (): React.ReactElement => {
         <Image
           src="/images/conference.webp"
           alt="Jeff giving a talk at a conference"
-          className="ml-5 h-[45vh]"
+          className="h-auto max-h-[45vh] w-full md:w-auto md:max-w-[40%] rounded-sm"
           width={500}
           height={375}
           priority
@@ -87,7 +87,7 @@ const FullAbout = (): React.ReactElement => {
           →{' '}
           <a
             href="/practice_focus"
-            className="text-gray-700 hover:text-gray-900 hover:underline italic"
+            className="text-secondary hover:text-primary-shade hover:underline italic"
           >
             Practice Focus
           </a>

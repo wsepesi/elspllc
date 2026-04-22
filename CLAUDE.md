@@ -4,207 +4,52 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Package Manager
 
-**This project uses PNPM exclusively.**
-
-- Always use `pnpm` commands, never `yarn` or `npm`
-- Lock file is `pnpm-lock.yaml`
+**This project uses PNPM exclusively.** Never use `yarn` or `npm`.
 
 ## Commands
 
-### Development
-
 - `pnpm dev` - Start development server on http://localhost:3000
-- `pnpm build` - Create production build in .next directory
-- `pnpm start` - Start production server
-- `pnpm lint` - Run ESLint
-- `pnpm type-check` - Run TypeScript type checking
+- `pnpm build` - Create production build
+- `pnpm lint` - Run ESLint (flat config, `eslint.config.mjs`)
+- `pnpm type-check` - Run TypeScript type checking (`tsc --noEmit`)
 
-### Dependencies
-
-- `pnpm install` - Install all dependencies
-- `pnpm add <package>` - Add production dependency
-- `pnpm add -D <package>` - Add development dependency
+No test framework is configured.
 
 ## Architecture
 
-This is a modern React TypeScript application for Environmental Law and Science, PLLC built with Next.js 15 and the App Router.
+Static marketing site for Environmental Law and Science, PLLC. Built with Next.js 16 App Router, React 19, TypeScript 6, and Tailwind CSS 4.
 
-### Tech Stack
+### Key Architectural Decisions
 
-- **Next.js 15** with App Router for SSG and routing
-- **React 19** with TypeScript for type safety
-- **Tailwind CSS** for utility-first styling
-- **Material-UI v7** for UI components (Button, Typography, etc.)
-- **Vercel Analytics** for performance tracking
-- **pnpm** for package management
+**Server/Client Split**: `app/layout.tsx` is a Server Component that loads fonts via `next/font/google` (Libre Franklin, Playfair Display, Crimson Pro, EB Garamond as CSS variables). It wraps children in `app/ClientLayout.tsx`, a `'use client'` component that provides Vercel Analytics.
 
-### Project Structure
+**All pages are SSG** (static site generation). No API routes, no server-side data fetching.
 
-```
-├── app/                    # Next.js App Router
-│   ├── layout.tsx         # Root layout
-│   ├── page.tsx           # Home page
-│   ├── about/             # About page
-│   ├── contact/           # Contact page
-│   ├── experience/        # Experience page
-│   ├── practice_focus/    # Practice areas page
-│   ├── presentations/     # Presentations page
-│   └── representative_experience/ # Case studies page
-├── src/
-│   ├── components/        # Reusable React components
-│   ├── pages/             # Legacy page components
-│   ├── configs/           # Theme and configuration
-│   ├── styles/            # Custom CSS for complex animations
-│   └── utils/             # Utility functions (cn for class merging)
-├── public/
-│   ├── images/            # Optimized images
-│   └── manifest.json      # PWA manifest
-├── plans/                 # Migration documentation
-└── vercel.json            # Vercel deployment configuration
-```
+**Styling**: Tailwind CSS 4 with CSS-native configuration (`@theme` in `global.css`) + shadcn/ui components. Brand colors, font sizes, breakpoints, and animations are defined in `src/configs/global.css` via `@theme` directives.
 
-### Routing Structure
+**Path alias**: `@/*` maps to `./src/*` (configured in tsconfig.json).
 
-All routes use Next.js App Router (app/ directory):
+### Project Layout
 
-- `/` - Home page with hero section and service panels
-- `/about` - About the firm
-- `/experience` - Professional experience
-- `/practice_focus` - Practice areas and specializations
-- `/presentations` - Speaking engagements and presentations
-- `/contact` - Contact information
-- `/representative_experience` - Case studies and past work
+- `app/` — Next.js App Router pages. Each route has a `page.tsx` that directly composes components from `src/components/`. Shared page layout (background, navbar, footer) is in `src/components/PageLayout.tsx`.
+- `src/components/` — All React components. `SimpleTemplate` provides a content container with title. Practice area content lives in dedicated components (PFAS, ContaminatedSites, Compliance, BusinessTransactions).
+- `src/components/ui/` — shadcn/ui components (accordion, button, card).
+- `src/components/icons/` — Custom SVG icon components (e.g., LinkedinIcon).
+- `src/configs/` — Global CSS (`global.css`) with Tailwind @theme configuration.
+- `src/styles/` — Custom CSS for complex animations (nav hover underlines, transitions).
+- `src/utils/` — Utility functions. `cn()` for merging Tailwind classes (clsx + tailwind-merge).
 
-### Component Architecture
+### Config Files
 
-#### Layout Components
+- `next.config.ts` — Next.js configuration (TypeScript)
+- `tsconfig.json` — TypeScript 6 with `es2022` target, `bundler` module resolution
+- `eslint.config.mjs` — ESLint 9 flat config with `next/core-web-vitals` and `next/typescript`
+- `postcss.config.mjs` — PostCSS with `@tailwindcss/postcss`
 
-- **Navbar** - Fixed top navigation with hover effects
-- **Footer** - Bottom footer with LinkedIn link
-- **Logo** - Firm branding and home link
-- **NavLinks/NavLink** - Navigation with active state and hover underlines
+### TypeScript
 
-#### Page Templates
-
-- **CoreTemplate** - Main content template with light/dark modes and images
-- **SimpleTemplate** - Simplified page template for basic content
-
-#### Content Components
-
-- **Panel** - Interactive service panels with Material-UI Cards
-- **CorePanel** - Main practice focus section with image and panels
-- **AboutPanel/ContactPanel** - Specific content sections
-- **Transition/BlueTransition** - Visual transition elements
-
-#### Practice Area Components
-
-- **PFAS** - PFAS and Chemical Regulation content
-- **ContaminatedSites** - Contaminated Sites and Brownfields
-- **Compliance** - Environmental Compliance and Advocacy
-- **BusinessTransactions** - Transactional Advice
-
-### Styling Approach
-
-#### Tailwind CSS (Primary)
-
-- Utility-first CSS framework for most styling
-- Custom configuration in `tailwind.config.js` with brand colors and fonts
-- Use `cn()` utility function for conditional classes
-
-#### Material-UI Components
-
-- Used for complex UI components (Button, Typography, Card, etc.)
-- Custom theme configuration in `src/configs/theme.ts`
-- Integrated with Tailwind for consistent styling
-
-#### Custom CSS
-
-- Complex animations in `src/styles/components.css`
-- Hover underline effects for navigation
-- Global styles in `src/configs/global.css`
-
-### Key Design Patterns
-
-#### Styling
-
-```typescript
-// Use cn utility for conditional classes
-import { cn } from '../utils/cn'
-
-<div className={cn(
-  "base-classes",
-  condition && "conditional-classes"
-)}>
-```
-
-#### Component Structure
-
-```typescript
-// Functional components with TypeScript
-interface Props {
-  title: string
-  children: React.ReactNode
-}
-
-const Component = ({ title, children }: Props): React.ReactElement => {
-  return (
-    <div className="tailwind-classes">
-      <Typography variant="h1">{title}</Typography>
-      {children}
-    </div>
-  )
-}
-```
-
-#### Image Handling
-
-```typescript
-// Next.js Image optimization
-import Image from 'next/image'
-
-<Image
-  src="/images/example.jpg"
-  alt="Description"
-  width={800}
-  height={600}
-  style={{ objectFit: 'cover' }}
-/>
-```
-
-### Performance Optimizations
-
-- Static Site Generation (SSG) for all pages
-- Next.js Image optimization for all images
-- Tailwind CSS purging for minimal bundle size
-- Modern ES modules and tree shaking
+Strict mode with aggressive checks: `noImplicitAny`, `noUnusedLocals`, `noUnusedParameters`, `exactOptionalPropertyTypes`.
 
 ### Deployment
 
-- **Platform**: Vercel with automatic deployments
-- **Build Command**: `pnpm build`
-- **Install Command**: `pnpm install`
-- **Node.js Version**: 20.x
-- **Framework**: Auto-detected Next.js
-
-### Development Guidelines
-
-#### Code Quality
-
-- TypeScript strict mode enabled
-- ESLint and Prettier configured
-- Functional components with proper TypeScript types
-- Consistent use of `React.ReactElement` return type
-
-#### Styling Rules
-
-- Use Tailwind utilities for styling
-- Keep Material-UI components for complex UI elements
-- Use custom CSS sparingly for complex animations only
-- Follow mobile-first responsive design
-
-#### File Organization
-
-- Components in `src/components/` by function
-- Pages in both `app/` (new App Router) and `src/pages/` (legacy)
-- Images in `public/images/` with optimized formats
-- Utilities in `src/utils/`
+Vercel with automatic deployments from `main` branch.

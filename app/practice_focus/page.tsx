@@ -1,6 +1,11 @@
 import type { Metadata } from 'next'
-import PracticeFocus from '../../src/pages/PracticeFocus'
-import React from 'react'
+import PageLayout from '@/components/PageLayout'
+import SimpleTemplate from '@/components/SimpleTemplate'
+import Focus from '@/components/Focus'
+import Compliance from '@/components/Compliance'
+import ContaminatedSites from '@/components/ContaminatedSites'
+import BusinessTransactions from '@/components/BusinessTransactions'
+import PFAS from '@/components/PFAS'
 
 export const metadata: Metadata = {
   title: 'Practice Focus',
@@ -17,5 +22,15 @@ export const metadata: Metadata = {
 }
 
 export default function PracticeFocusPage() {
-  return <PracticeFocus />
+  return (
+    <PageLayout>
+      <SimpleTemplate title="Practice Focus">
+        <Focus />
+      </SimpleTemplate>
+      <Compliance />
+      <ContaminatedSites />
+      <BusinessTransactions />
+      <PFAS />
+    </PageLayout>
+  )
 }

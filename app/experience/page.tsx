@@ -1,5 +1,8 @@
 import type { Metadata } from 'next'
-import Experience from '../../src/pages/Experience'
+import PageLayout from '@/components/PageLayout'
+import SimpleTemplate from '@/components/SimpleTemplate'
+import ExperienceDropdown from '@/components/ExperienceDropdown'
+import ExperienceText from '@/components/ExperienceText'
 
 export const metadata: Metadata = {
   title: 'Experience',
@@ -16,5 +19,14 @@ export const metadata: Metadata = {
 }
 
 export default function ExperiencePage() {
-  return <Experience />
+  return (
+    <PageLayout>
+      <SimpleTemplate title="Experience">
+        <div className="flex flex-col lg:flex-row gap-8">
+          <ExperienceText />
+          <ExperienceDropdown />
+        </div>
+      </SimpleTemplate>
+    </PageLayout>
+  )
 }

@@ -5,11 +5,11 @@ import { cn } from '../utils/cn'
 
 const Logo = (): React.ReactElement => {
   return (
-    <div className="flex ml-[5vw]">
+    <div className="flex ml-6 md:ml-10 lg:ml-16">
       <Button
         variant="ghost"
         className={cn(
-          'hover:bg-transparent p-0 h-auto font-medium text-base font-garamond',
+          'hover:bg-transparent p-0 h-auto font-medium text-lg tracking-wide font-playfair',
           'after:bg-transparent after:h-0'
         )}
         asChild

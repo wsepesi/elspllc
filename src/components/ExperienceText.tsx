@@ -3,12 +3,12 @@ import React from 'react'
 
 const ExperienceText = (): React.ReactElement => {
   return (
-    <div className="w-[65%] mr-[10px]">
-      <div className="flex flex-row">
+    <div className="w-full lg:w-3/5">
+      <div className="flex flex-col sm:flex-row gap-4">
         <Image
           src="/images/headshot.webp"
           alt="Jeff Sepesi"
-          className="mr-5 w-48 h-48 mt-[30px]"
+          className="w-32 h-32 md:w-48 md:h-48 rounded-sm"
           width={418}
           height={418}
         />

@@ -18,10 +18,10 @@
   position: absolute;
   width: 90%;
   transform: scaleX(0) translateX(-50%);
-  height: 3px;
+  height: 2px;
   bottom: 0;
   left: 50%;
-  background-color: #000000;
+  background-color: #305473;
   transform-origin: bottom left;
   transition: transform 0.2s ease-out;
 }

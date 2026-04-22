@@ -4,8 +4,8 @@ import React from 'react'
 const Focus = (): React.ReactElement => {
   return (
     <div>
-      <div className="flex flex-row justify-between my-[5vh]">
-        <div className="w-1/2">
+      <div className="flex flex-col md:flex-row justify-between gap-8 my-8">
+        <div className="w-full md:w-3/5">
           <p className="text-base leading-relaxed mb-4">
             Environmental Law and Science, PLLC has experience with a wide range
             of environmental law matters and challenges at the federal level and
@@ -55,41 +55,35 @@ const Focus = (): React.ReactElement => {
             and across the states, from Minnesota to the US Virgin Islands.
           </p>
         </div>
-        <div className="w-1/2 flex justify-center items-center ml-[5vw]">
-          <div className="w-[15vw]">
+        <div className="w-full md:w-2/5 flex justify-center items-center">
+          <div className="grid grid-cols-2 gap-1">
             <Image
-              className="w-[15vw] h-[15vw]"
+              className="aspect-square object-cover"
               src="/images/lab.webp"
               alt="Jeff working in a lab"
               width={400}
               height={300}
-              style={{ objectFit: 'cover' }}
             />
             <Image
-              className="w-[15vw] h-[15vw]"
-              src="/images/drums_color.webp"
-              alt="Waste drums"
-              width={400}
-              height={300}
-              style={{ objectFit: 'cover' }}
-            />
-          </div>
-          <div className="w-[15vw]">
-            <Image
-              className="w-[15vw] h-[15vw]"
+              className="aspect-square object-cover"
               src="/images/red.webp"
               alt="Superfund site on the US Virgin Islands"
               width={400}
               height={300}
-              style={{ objectFit: 'cover' }}
             />
             <Image
-              className="w-[15vw] h-[15vw]"
+              className="aspect-square object-cover"
+              src="/images/drums_color.webp"
+              alt="Waste drums"
+              width={400}
+              height={300}
+            />
+            <Image
+              className="aspect-square object-cover"
               src="/images/conference_2.webp"
               alt="Jeff presenting at a conference"
               width={400}
               height={300}
-              style={{ objectFit: 'cover' }}
             />
           </div>
         </div>

@@ -1,7 +1,5 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
-
 import { Button } from './ui/button'
 import Link from 'next/link'
 import { cn } from '../utils/cn'
@@ -13,15 +11,9 @@ type Props = {
 }
 
 const NavLink = (props: Props): React.ReactElement => {
-  const [isHere, setIsHere] = useState<boolean>()
   const pathname = usePathname()
   const location = pathname.replace('/', '')
-
-  useEffect(() => {
-    if (props.to === location) {
-      setIsHere(true)
-    } else setIsHere(false)
-  }, [props.to, location])
+  const isHere = props.to === location
 
   return (
     <Button

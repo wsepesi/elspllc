@@ -1,10 +1,5 @@
 import type { Metadata } from 'next'
-import {
-  Libre_Franklin,
-  Playfair_Display,
-  Crimson_Pro,
-  EB_Garamond,
-} from 'next/font/google'
+import { Libre_Franklin, Playfair_Display } from 'next/font/google'
 import ClientLayout from './ClientLayout'
 import '../src/configs/global.css'
 
@@ -21,19 +16,6 @@ const playfairDisplay = Playfair_Display({
   variable: '--font-playfair',
 })
 
-const crimsonPro = Crimson_Pro({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600'],
-  style: ['normal', 'italic'],
-  variable: '--font-crimson',
-})
-
-const ebGaramond = EB_Garamond({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800'],
-  style: ['normal', 'italic'],
-  variable: '--font-garamond',
-})
 
 export const metadata: Metadata = {
   title: {
@@ -80,7 +62,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${libreFranklin.variable} ${playfairDisplay.variable} ${crimsonPro.variable} ${ebGaramond.variable}`}
+      className={`${libreFranklin.variable} ${playfairDisplay.variable}`}
     >
       <body className={libreFranklin.className}>
         <ClientLayout>{children}</ClientLayout>

@@ -8,19 +8,20 @@ const AboutPanel = (): React.ReactElement => {
     <div className="w-screen h-screen flex justify-center items-center">
       <div
         className={cn(
-          'flex flex-col items-center justify-center h-[40vh] my-[25vh] w-3/4',
-          'font-libre text-center font-medium text-6xl',
-          'bg-white/80 backdrop-blur-sm p-8'
+          'flex flex-col items-center justify-center py-16 md:py-20',
+          'w-full max-w-3xl mx-auto px-6',
+          'font-libre text-center font-medium',
+          'bg-white/80 backdrop-blur-sm'
         )}
       >
-        <h1 className="text-6xl font-garamond font-normal leading-tight tracking-tight">
+        <h1 className="text-4xl md:text-5xl font-playfair font-normal leading-tight tracking-tight">
           An environmental law practice grounded in science and the law
         </h1>
         <Button
           className={cn(
             'hover-underline flex justify-center items-center text-xl text-black',
-            'rounded-none w-44 h-12 mt-9 text-black',
-            'bg-white/80 backdrop-blur-sm',
+            'rounded-sm w-44 h-12 mt-9 text-black',
+            'bg-white/80 backdrop-blur-sm border border-black/10',
             'hover:bg-white/90 transition-all duration-300'
           )}
         >

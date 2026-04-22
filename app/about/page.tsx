@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
-import About from '../../src/pages/About'
+import PageLayout from '@/components/PageLayout'
+import SimpleTemplate from '@/components/SimpleTemplate'
+import FullAbout from '@/components/FullAbout'
 
 export const metadata: Metadata = {
   title: 'About',
@@ -15,5 +17,11 @@ export const metadata: Metadata = {
 }
 
 export default function AboutPage() {
-  return <About />
+  return (
+    <PageLayout>
+      <SimpleTemplate title="About">
+        <FullAbout />
+      </SimpleTemplate>
+    </PageLayout>
+  )
 }
