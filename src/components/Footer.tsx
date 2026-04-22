@@ -1,22 +1,21 @@
 import { Button } from './ui/button'
-import { Linkedin } from 'lucide-react'
-import React from 'react'
+import LinkedinIcon from './icons/LinkedinIcon'
 import { cn } from '../utils/cn'
 
-const Footer = (): React.ReactElement => {
+export default function Footer() {
   return (
     <div
       className={cn(
-        'bg-black w-full min-h-[7vh] flex justify-between items-center'
+        'bg-[#1a1a1a] w-full py-5 flex justify-between items-center'
       )}
     >
-      <p className="text-white text-sm font-normal ml-12">
-        © 2021 Environmental Law and Science, PLLC. All rights reserved.
+      <p className="text-white text-xs sm:text-sm font-normal px-4 sm:px-6 md:px-10 lg:px-16 leading-snug">
+        © 2026 Environmental Law and Science, PLLC. All rights reserved.
       </p>
       <Button
         variant="ghost"
         size="icon"
-        className="text-white mr-12 hover:bg-white/10"
+        className="text-white mr-3 sm:mr-6 md:mr-10 lg:mr-16 shrink-0 hover:bg-white/10"
         asChild
       >
         <a
@@ -24,11 +23,9 @@ const Footer = (): React.ReactElement => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Linkedin className="h-5 w-5" />
+          <LinkedinIcon className="h-5 w-5" />
         </a>
       </Button>
     </div>
   )
 }
-
-export default Footer

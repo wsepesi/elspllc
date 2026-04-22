@@ -1,9 +1,7 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
-
-import { Button } from './ui/button'
 import Link from 'next/link'
+import React from 'react'
 import { cn } from '../utils/cn'
 import { usePathname } from 'next/navigation'
 
@@ -12,28 +10,27 @@ type Props = {
   to: string
 }
 
-const NavLink = (props: Props): React.ReactElement => {
-  const [isHere, setIsHere] = useState<boolean>()
+const NavLink = ({ text, to }: Props): React.ReactElement => {
   const pathname = usePathname()
-  const location = pathname.replace('/', '')
-
-  useEffect(() => {
-    if (props.to === location) {
-      setIsHere(true)
-    } else setIsHere(false)
-  }, [props.to, location])
+  const isActive = pathname === `/${to}`
 
   return (
-    <Button
-      variant="ghost"
+    <Link
+      href={`/${to}`}
       className={cn(
-        'font-normal hover-underline hover:bg-transparent',
-        isHere && 'active'
+        'group relative px-3 py-2 text-sm font-libre tracking-wide transition-colors duration-300',
+        isActive ? 'text-secondary' : 'text-gray-shade hover:text-secondary'
       )}
-      asChild
     >
-      <Link href={`/${props.to}`}>{props.text}</Link>
-    </Button>
+      {text}
+      <span
+        aria-hidden
+        className={cn(
+          'pointer-events-none absolute left-3 right-3 bottom-1 h-px bg-secondary origin-left transition-transform duration-300 ease-out',
+          isActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+        )}
+      />
+    </Link>
   )
 }
 

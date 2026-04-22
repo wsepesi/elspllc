@@ -1,34 +1,19 @@
-import { Button } from './ui/button'
-import Link from 'next/link'
 import React from 'react'
-import { cn } from '../utils/cn'
 
 const AboutPanel = (): React.ReactElement => {
   return (
-    <div className="w-screen h-screen flex justify-center items-center">
+    <div className="relative w-full h-screen flex justify-center items-center">
       <div
-        className={cn(
-          'flex flex-col items-center justify-center h-[40vh] my-[25vh] w-3/4',
-          'font-libre text-center font-medium text-6xl',
-          'bg-white/80 backdrop-blur-sm p-8'
-        )}
-      >
-        <h1 className="text-6xl font-garamond font-normal leading-tight tracking-tight">
-          An environmental law practice grounded in science and the law
-        </h1>
-        <Button
-          className={cn(
-            'hover-underline flex justify-center items-center text-xl text-black',
-            'rounded-none w-44 h-12 mt-9 text-black',
-            'bg-white/80 backdrop-blur-sm',
-            'hover:bg-white/90 transition-all duration-300'
-          )}
-        >
-          <Link href="/about" className="no-underline text-black">
-            About us
-          </Link>
-        </Button>
-      </div>
+        aria-hidden
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            'radial-gradient(ellipse 50% 28% at 50% 50%, rgba(255,255,255,0.22), rgba(255,255,255,0) 65%)',
+        }}
+      />
+      <h1 className="relative max-w-3xl mx-auto px-6 text-center text-3xl md:text-[2.75rem] font-caslon font-normal leading-[1.15] tracking-tight text-black">
+        An environmental law practice grounded in science and the law
+      </h1>
     </div>
   )
 }

@@ -1,50 +1,25 @@
-import CoreTemplate from './CoreTemplate'
+import PracticeSpread from './PracticeSpread'
 import React from 'react'
 
 const PFAS = (): React.ReactElement => {
   return (
-    <CoreTemplate
-      mode="light"
-      title="chemical regulation"
-      img="molecule"
+    <PracticeSpread
       id="pfas"
-    >
-      <ul className="space-y-4">
-        <li>
-          <p className="text-base leading-relaxed">
-            PFAS advice and guidance, including emerging federal and state laws,
-            regulations, policies, and use restrictions, as well as PFAS health
-            science, remediation and litigation.
-          </p>
-        </li>
-        <li>
-          <p className="text-base leading-relaxed">
-            TSCA counseling and compliance, including new and existing chemicals
-            regulation, import and export requirements and reporting
-          </p>
-        </li>
-        <li>
-          <p className="text-base leading-relaxed">
-            EPCRA notification and reporting
-          </p>
-        </li>
-        <li>
-          <p className="text-base leading-relaxed">
-            Chemical release reporting
-          </p>
-        </li>
-        <li>
-          <p className="text-base leading-relaxed">
-            Emerging chemical management concerns
-          </p>
-        </li>
-        <li>
-          <p className="text-base leading-relaxed">
-            State chemical regulation programs
-          </p>
-        </li>
-      </ul>
-    </CoreTemplate>
+      number="04"
+      title="PFAS & Chemical Regulation"
+      imgAlt="Molecular structure illustration"
+      img="molecule"
+      imageSide="right"
+      kicker="Strategic and compliance advice on chemical product regulation, including PFAS and other emerging chemicals, across federal and state programs."
+      services={[
+        'PFAS advice and guidance — emerging federal and state laws, regulations, policies and use restrictions, plus PFAS health science, remediation and litigation',
+        'TSCA counseling and compliance, including new and existing chemicals regulation, import and export requirements and reporting',
+        'EPCRA notification and reporting',
+        'Chemical release reporting',
+        'Emerging chemical management concerns',
+        'State chemical regulation programs',
+      ]}
+    />
   )
 }
 

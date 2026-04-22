@@ -1,15 +1,14 @@
-import Footer from '../components/Footer'
-import Navbar from '../components/Navbar'
-import React from 'react'
+import Footer from './Footer'
+import Navbar from './Navbar'
 
-type Props = {
-  children: any
-}
-
-const Page = (props: Props): React.ReactElement => {
+export default function PageLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   return (
     <div
-      className="w-screen"
+      className="w-full overflow-x-hidden"
       style={{
         backgroundImage: 'url(/images/lake_4.webp)',
         backgroundSize: 'cover',
@@ -20,11 +19,9 @@ const Page = (props: Props): React.ReactElement => {
     >
       <Navbar />
       <div className="flex flex-col justify-center items-center">
-        {props.children}
+        {children}
       </div>
       <Footer />
     </div>
   )
 }
-
-export default Page

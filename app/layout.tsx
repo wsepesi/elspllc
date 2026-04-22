@@ -1,11 +1,7 @@
-import type { Metadata } from 'next'
-import {
-  Libre_Franklin,
-  Playfair_Display,
-  Crimson_Pro,
-  EB_Garamond,
-} from 'next/font/google'
+import type { Metadata, Viewport } from 'next'
+import { Libre_Franklin, Libre_Caslon_Text } from 'next/font/google'
 import ClientLayout from './ClientLayout'
+import { siteName, siteUrl } from '../src/configs/site'
 import '../src/configs/global.css'
 
 const libreFranklin = Libre_Franklin({
@@ -15,38 +11,30 @@ const libreFranklin = Libre_Franklin({
   variable: '--font-libre',
 })
 
-const playfairDisplay = Playfair_Display({
+const libreCaslon = Libre_Caslon_Text({
   subsets: ['latin'],
-  weight: ['400', '700', '900'],
-  variable: '--font-playfair',
+  weight: ['400', '700'],
+  style: ['normal', 'italic'],
+  variable: '--font-caslon',
 })
 
-const crimsonPro = Crimson_Pro({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600'],
-  style: ['normal', 'italic'],
-  variable: '--font-crimson',
-})
-
-const ebGaramond = EB_Garamond({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800'],
-  style: ['normal', 'italic'],
-  variable: '--font-garamond',
-})
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
-    default: 'Environmental Law and Science, PLLC',
-    template: '%s | Environmental Law and Science, PLLC',
+    default: siteName,
+    template: `%s | ${siteName}`,
   },
   description:
     'Environmental law practice grounded in science and law. Expert legal services for PFAS litigation, contaminated site remediation, environmental compliance, and business transactions.',
   keywords:
     'environmental law, PFAS litigation, contaminated sites, environmental compliance, business transactions, environmental lawyer, regulatory affairs, site remediation',
-  authors: [{ name: 'Environmental Law and Science, PLLC' }],
-  creator: 'Environmental Law and Science, PLLC',
-  publisher: 'Environmental Law and Science, PLLC',
+  authors: [{ name: siteName }],
+  creator: siteName,
+  publisher: siteName,
+  alternates: {
+    canonical: '/',
+  },
   robots: {
     index: true,
     follow: true,
@@ -61,15 +49,26 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    title: 'Environmental Law and Science, PLLC',
+    url: siteUrl,
+    title: siteName,
     description: 'Environmental law practice grounded in science and law',
-    siteName: 'Environmental Law and Science, PLLC',
+    siteName,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Environmental Law and Science, PLLC',
+    title: siteName,
     description: 'Environmental law practice grounded in science and law',
   },
+  formatDetection: {
+    telephone: true,
+    address: true,
+    email: true,
+  },
+}
+
+export const viewport: Viewport = {
+  themeColor: '#1a1a1a',
+  colorScheme: 'light',
 }
 
 export default function RootLayout({
@@ -80,7 +79,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${libreFranklin.variable} ${playfairDisplay.variable} ${crimsonPro.variable} ${ebGaramond.variable}`}
+      className={`${libreFranklin.variable} ${libreCaslon.variable}`}
     >
       <body className={libreFranklin.className}>
         <ClientLayout>{children}</ClientLayout>

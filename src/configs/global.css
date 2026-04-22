@@ -1,54 +1,113 @@
 @import 'tailwindcss';
-@tailwind utilities;
-
-/* Fonts now loaded via next/font in layout.tsx */
 @import '../styles/components.css';
 @import 'tw-animate-css';
 
+@theme {
+  /* Brand Colors */
+  --color-primary: #66b1f2;
+  --color-primary-shade: #499de5;
+  --color-secondary: #305473;
+  --color-secondary-shade: #4f708c;
+  --color-tertiary: #f2f0d0;
+  --color-tertiary-shade: #e7e5c7;
+  --color-background: #F3F3F1;
+  --color-error: #EE0000;
+  --color-gray: #7A766D;
+  --color-gray-10: #DFDFD8;
+  --color-gray-shade: #302E28;
+  --color-light-gray: #A9A59C;
+  --color-light-gray-30: #D2CFC7;
+  --color-transparent-border: rgba(48, 46, 40, 0.1);
+
+  /* Font Families */
+  --font-libre: var(--font-libre), sans-serif;
+  --font-caslon: var(--font-caslon), serif;
+
+  /* Font Sizes */
+  --font-size-h1: 4rem;
+  --font-size-h1-mobile: 2.25rem;
+  --font-size-h2: 4.75rem;
+  --font-size-h3: 3.375rem;
+  --font-size-h4: 2.5rem;
+  --font-size-h5: 1.5rem;
+  --font-size-body1: 1.125rem;
+  --font-size-body2: 1rem;
+  --font-size-subtitle1: 2rem;
+  --font-size-subtitle2: 1.375rem;
+  --font-size-button: 1rem;
+
+  /* Line Heights */
+  --line-height-h1: 4.875rem;
+  --line-height-h1-mobile: 2.6875rem;
+  --line-height-h2: 5.75rem;
+  --line-height-h3: 4.0625rem;
+  --line-height-h4: 3rem;
+  --line-height-h5: 1.8125rem;
+  --line-height-body1: 1.75rem;
+  --line-height-body2: 1.375rem;
+  --line-height-subtitle1: 3rem;
+  --line-height-subtitle2: 1.6875rem;
+  --line-height-button: 1.5rem;
+
+  /* Breakpoints */
+  --breakpoint-xs: 0px;
+  --breakpoint-sm: 475px;
+  --breakpoint-md: 750px;
+  --breakpoint-lg: 950px;
+  --breakpoint-xl: 1280px;
+
+  /* Border Radius */
+  --radius: 0.5rem;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* Animations */
+  --animate-text-effect: textEffect 3s ease-in-out infinite;
+}
+
+@keyframes textEffect {
+  0% {
+    background-position: right bottom;
+  }
+  100% {
+    background-position: left bottom;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out;
+}
+
 /* Typography Enhancements */
-.font-playfair {
-  letter-spacing: -0.02em;
+.font-caslon {
+  letter-spacing: 0;
 }
 
-/* Add subtle text shadow to large headings */
-h1.font-playfair {
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+@layer base {
+  p {
+    line-height: 1.7;
+    color: #333;
+  }
 }
 
-/* Improve readability of body text */
-p {
-  line-height: 1.7;
-  color: #333;
-}
-
-/* Fix text color on dark backgrounds */
-.bg-black,
-.bg-gray-900,
-.bg-slate-900,
-[class*='bg-black'],
-[class*='bg-gray-900'],
-[class*='bg-slate-900'],
-.bg-\[\#1a1a1a\]\/90 {
+/* Dark background text fix */
+.dark-bg {
   color: white;
 }
 
-.bg-black *,
-.bg-gray-900 *,
-.bg-slate-900 *,
-[class*='bg-black'] *,
-[class*='bg-gray-900'] *,
-[class*='bg-slate-900'] *,
-.bg-\[\#1a1a1a\]\/90 * {
-  color: inherit;
-}
-
-/* Override p tag color on dark backgrounds */
-.bg-black p,
-.bg-gray-900 p,
-.bg-slate-900 p,
-[class*='bg-black'] p,
-[class*='bg-gray-900'] p,
-[class*='bg-slate-900'] p,
-.bg-\[\#1a1a1a\]\/90 p {
-  color: white !important;
+.dark-bg p {
+  color: white;
 }

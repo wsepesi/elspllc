@@ -1,50 +1,25 @@
-import CoreTemplate from './CoreTemplate'
+import PracticeSpread from './PracticeSpread'
 import React from 'react'
 
 const BusinessTransactions = (): React.ReactElement => {
   return (
-    <CoreTemplate
-      mode="dark"
-      title="business transactions"
-      img="business"
+    <PracticeSpread
       id="business"
-    >
-      <ul className="space-y-4">
-        <li>
-          <p className="text-base leading-relaxed">
-            Advise clients on environmental risks in business transactions,
-            including mergers and acquisitions and real estate transactions
-          </p>
-        </li>
-        <li>
-          <p className="text-base leading-relaxed">
-            Manage and oversee environmental due diligence
-          </p>
-        </li>
-        <li>
-          <p className="text-base leading-relaxed">
-            Environmental risks allocation through transactional documents,
-            environmental indemnities and alternative risk mitigation
-          </p>
-        </li>
-        <li>
-          <p className="text-base leading-relaxed">
-            Securing liability assurance letters
-          </p>
-        </li>
-        <li>
-          <p className="text-base leading-relaxed">
-            Support contaminated property investigation, acquisition or sale,
-            cleaning up, and redevelopment
-          </p>
-        </li>
-        <li>
-          <p className="text-base leading-relaxed">
-            Coordinate with environmental consultants
-          </p>
-        </li>
-      </ul>
-    </CoreTemplate>
+      number="03"
+      title="Business Transactions"
+      imgAlt="Professionals in discussion during a business transaction"
+      img="business"
+      imageSide="left"
+      kicker="Counseling clients on the environmental aspects of corporate, real estate and other business transactions — from due diligence through risk allocation."
+      services={[
+        'Advising clients on environmental risks in business transactions, including mergers and acquisitions and real estate',
+        'Managing and overseeing environmental due diligence',
+        'Allocating environmental risk through transactional documents, environmental indemnities and alternative risk mitigation',
+        'Securing liability assurance letters',
+        'Supporting contaminated property investigation, acquisition, cleanup and redevelopment',
+        'Coordinating with environmental consultants',
+      ]}
+    />
   )
 }
 

@@ -5,7 +5,7 @@ import { cn } from '../utils/cn'
 
 type Props = {
   link: string
-  children: any
+  children: React.ReactNode
 }
 
 // add hover effect, add link
@@ -17,8 +17,9 @@ const Panel = (props: Props): React.ReactElement => {
     >
       <Card
         className={cn(
-          'h-[15vh] p-6 bg-white shadow-xl rounded-none m-[5px]',
-          'hover:shadow-2xl transition-shadow duration-200 cursor-pointer',
+          'h-28 md:h-32 p-6 bg-white shadow-md rounded-sm',
+          'border-l-2 border-primary/40',
+          'hover:shadow-lg transition-shadow duration-200 cursor-pointer',
           'flex items-center justify-center'
         )}
       >
