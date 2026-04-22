@@ -1,93 +1,92 @@
-import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
+
+type Practice = {
+  number: string
+  title: string
+  id: string
+  kicker: string
+}
+
+const practices: Practice[] = [
+  {
+    number: '01',
+    title: 'Environmental Compliance & Advocacy',
+    id: 'compliance',
+    kicker:
+      'Permitting, enforcement defense, and counsel across federal and state environmental laws.',
+  },
+  {
+    number: '02',
+    title: 'Contaminated Sites & Brownfields',
+    id: 'contaminated',
+    kicker:
+      'CERCLA and RCRA cleanup, cost recovery, consent decrees, and brownfield redevelopment.',
+  },
+  {
+    number: '03',
+    title: 'Business Transactions',
+    id: 'business',
+    kicker:
+      'Environmental risk in M&A and real estate — due diligence, indemnities, and liability allocation.',
+  },
+  {
+    number: '04',
+    title: 'PFAS & Chemical Regulation',
+    id: 'pfas',
+    kicker:
+      'PFAS counsel, TSCA compliance, chemical release reporting, and emerging-contaminant strategy.',
+  },
+]
 
 const Focus = (): React.ReactElement => {
   return (
-    <div>
-      <div className="flex flex-col md:flex-row justify-between gap-8 my-8">
-        <div className="w-full md:w-3/5">
-          <p className="text-base leading-relaxed mb-4">
-            Environmental Law and Science, PLLC has experience with a wide range
-            of environmental law matters and challenges at the federal level and
-            in many states. Our practice focuses on four primary areas:
-          </p>
-          <ul className="space-y-3">
-            <li className="my-[5px]">
-              <p className="text-base leading-relaxed">
-                <span className="font-bold">
-                  Environmental Compliance and Advocacy{' '}
-                </span>
-                – advising and supporting clients in complying with the vast
-                network of laws addressing air, water and waste, including
-                permitting and auditing, as well the defense of agency
-                enforcement actions
-              </p>
-            </li>
-            <li className="my-[5px]">
-              <p className="text-base leading-relaxed">
-                <span className="font-bold">
-                  Contaminated Sites and Brownfields{' '}
-                </span>
-                - providing legal support to clients regarding potential
-                liability from third party and legacy waste sites, as well as
-                the cleanup and redevelop of contaminated property
-              </p>
-            </li>
-            <li className="my-[5px]">
-              <p className="text-base leading-relaxed">
-                <span className="font-bold">Business Transactions </span>–
-                assisting clients with the environmental aspects of corporate,
-                real estate and other business transactions
-              </p>
-            </li>
-            <li className="my-[5px]">
-              <p className="text-base leading-relaxed">
-                <span className="font-bold">PFAS and Chemical Regulation </span>
-                – providing strategic and compliance advice to clients on
-                chemical product regulation, including PFAS and other emerging
-                chemicals
-              </p>
-            </li>
-          </ul>
-          <p className="text-base leading-relaxed mt-4">
-            Beyond these core areas, we have experience in a broad array of
-            environmental, health and safety law issues, at the federal level
-            and across the states, from Minnesota to the US Virgin Islands.
-          </p>
-        </div>
-        <div className="w-full md:w-2/5 flex justify-center items-center">
-          <div className="grid grid-cols-2 gap-1">
-            <Image
-              className="aspect-square object-cover"
-              src="/images/lab.webp"
-              alt="Jeff working in a lab"
-              width={400}
-              height={300}
-            />
-            <Image
-              className="aspect-square object-cover"
-              src="/images/red.webp"
-              alt="Superfund site on the US Virgin Islands"
-              width={400}
-              height={300}
-            />
-            <Image
-              className="aspect-square object-cover"
-              src="/images/drums_color.webp"
-              alt="Waste drums"
-              width={400}
-              height={300}
-            />
-            <Image
-              className="aspect-square object-cover"
-              src="/images/conference_2.webp"
-              alt="Jeff presenting at a conference"
-              width={400}
-              height={300}
-            />
-          </div>
-        </div>
+    <div className="mb-14 md:mb-20">
+      <p className="font-caslon text-xl md:text-2xl text-gray-shade leading-snug max-w-3xl mb-10 md:mb-14">
+        Environmental Law and Science, PLLC has experience with a wide range of
+        environmental law matters and challenges at the federal level and in
+        many states, from Minnesota to the US Virgin Islands.
+      </p>
+      <div className="flex items-baseline justify-between gap-4 mb-6 md:mb-8">
+        <h2 className="font-caslon text-2xl md:text-3xl font-normal leading-tight tracking-tight">
+          Four primary areas
+        </h2>
+        <span className="text-[0.7rem] uppercase tracking-[0.3em] text-gray font-libre shrink-0 whitespace-nowrap">
+          01 — 04
+        </span>
       </div>
+      <ul className="border-t border-transparent-border">
+        {practices.map((p) => (
+          <li key={p.id} className="border-b border-transparent-border">
+            <Link
+              href={`#${p.id}`}
+              className="group block py-4 md:py-5 focus-visible:outline-none"
+            >
+              <div className="flex items-baseline gap-4 md:gap-6">
+                <span className="font-libre text-[0.7rem] tabular-nums tracking-[0.25em] text-gray shrink-0 w-6 pt-1">
+                  {p.number}
+                </span>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-baseline justify-between gap-3">
+                    <h3 className="font-caslon text-xl md:text-2xl leading-tight tracking-tight text-gray-shade transition-colors duration-500 group-hover:text-secondary group-focus-visible:text-secondary">
+                      {p.title}
+                    </h3>
+                    <span
+                      aria-hidden
+                      className="font-caslon text-base md:text-lg text-gray shrink-0 opacity-30 transition-all duration-500 group-hover:opacity-100 group-hover:text-secondary group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-focus-visible:opacity-100 group-focus-visible:text-secondary"
+                    >
+                      ↓
+                    </span>
+                  </div>
+                  <p className="mt-1.5 text-sm text-gray leading-relaxed">
+                    {p.kicker}
+                  </p>
+                </div>
+              </div>
+            </Link>
+          </li>
+        ))}
+      </ul>
     </div>
   )
 }

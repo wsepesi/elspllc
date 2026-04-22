@@ -8,10 +8,12 @@ export const metadata: Metadata = {
     'View our speaking engagements and presentations on environmental law topics including PFAS, contaminated sites, environmental compliance, and regulatory updates.',
   keywords:
     'environmental law presentations, PFAS presentations, environmental compliance speaking, regulatory updates, environmental law conferences',
+  alternates: { canonical: '/presentations' },
   openGraph: {
     title: 'Presentations | Environmental Law and Science, PLLC',
     description: 'Speaking engagements and presentations on environmental law',
     type: 'website',
+    url: '/presentations',
   },
 }
 

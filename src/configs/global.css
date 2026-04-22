@@ -21,7 +21,7 @@
 
   /* Font Families */
   --font-libre: var(--font-libre), sans-serif;
-  --font-playfair: var(--font-playfair), serif;
+  --font-caslon: var(--font-caslon), serif;
 
   /* Font Sizes */
   --font-size-h1: 4rem;
@@ -92,17 +92,15 @@
 }
 
 /* Typography Enhancements */
-.font-playfair {
-  letter-spacing: -0.02em;
+.font-caslon {
+  letter-spacing: 0;
 }
 
-h1.font-playfair {
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-p {
-  line-height: 1.7;
-  color: #333;
+@layer base {
+  p {
+    line-height: 1.7;
+    color: #333;
+  }
 }
 
 /* Dark background text fix */

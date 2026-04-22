@@ -24,14 +24,14 @@ const Navbar = (): React.ReactElement => {
         <Button
           variant="ghost"
           size="icon"
-          className="md:hidden mr-6 hover:bg-transparent"
+          className="md:hidden mr-3 sm:mr-6 hover:bg-transparent"
           onClick={() => setMobileOpen(!mobileOpen)}
         >
           {mobileOpen ? <X className="size-5" /> : <Menu className="size-5" />}
         </Button>
       </div>
       {mobileOpen && (
-        <div className="md:hidden bg-white/95 backdrop-blur-sm border-t border-gray-10 px-6 py-4 flex flex-col gap-2">
+        <div className="md:hidden bg-white/95 backdrop-blur-sm border-t border-gray-10 px-4 sm:px-6 py-4 flex flex-col gap-2">
           <NavLink text="About" to="about" />
           <NavLink text="Experience" to="experience" />
           <NavLink text="Practice Focus" to="practice_focus" />

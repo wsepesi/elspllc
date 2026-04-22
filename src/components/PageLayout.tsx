@@ -8,7 +8,7 @@ export default function PageLayout({
 }) {
   return (
     <div
-      className="w-screen"
+      className="w-full overflow-x-hidden"
       style={{
         backgroundImage: 'url(/images/lake_4.webp)',
         backgroundSize: 'cover',
